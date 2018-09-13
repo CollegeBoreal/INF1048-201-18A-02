@@ -10,3 +10,8 @@ Programmation et scripts - Automne 2018
 |No| Date   | Cours                       | Intitulé                                |  Pratique .                            |
 |--|--------|:----------------------------|:----------------------------------------|:---------------------------------------|
 | 1|04-09-17|[0.JavaScript](0.JavaScript) (*)| Javascript                            |  Introduction au `shadow DOM`           |
+
+
+References:
+
+https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
