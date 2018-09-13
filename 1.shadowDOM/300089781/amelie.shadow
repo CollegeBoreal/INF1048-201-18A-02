@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Bonjour la classe</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+  </tr>
+  <tr>
+    <td>Safaa</td>
+    <td>Zaoui</td>
+  </tr>
+  <tr>
+    <td>Mostafa</td>
+    <td>Bouchichi</td>
+  </tr>
+  <tr>
+    <td>Fabien</td>
+    <td>Ho</td>
+  </tr>
+</table>
+
+</body>
+</html>
