@@ -14,4 +14,6 @@ Programmation et scripts - Automne 2018
 
 References:
 
+https://eloquentjavascript.net/
+
 https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
