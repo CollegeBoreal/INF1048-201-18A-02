@@ -9,7 +9,9 @@ Programmation et scripts - Automne 2018
 
 |No| Date   | Cours                       | Intitulé                                |  Pratique .                            |
 |--|--------|:----------------------------|:----------------------------------------|:---------------------------------------|
-| 1|04-09-17|[0.JavaScript](0.JavaScript) (*)| Javascript                            |  Introduction au `shadow DOM`           |
+| 1|03-09-17|[0.JavaScript](0.JavaScript) | Javascript                              |  Introduction a JavaScript             |
+| 2|10-09-17|[1.shadowDOM](1.shadowDOM)   | Shadow DOM                              |  Introduction au `shadow DOM`          |
+| 3|18-09-17|[2.WebPack](2.WebPack)       | WebPack                                 |  Packages et Librairies                |
 
 
 References:
