@@ -16,6 +16,8 @@ Programmation et scripts - Automne 2018
 
 # References:
 
+### Angular
+
 https://eloquentjavascript.net/ (Livre du cours)
 
 https://js.do/ (Tester JS en ligne)
@@ -26,7 +28,7 @@ https://codecraft.tv/courses/angular/ (Angular 5 free eBook)
 
 
 
-## NativeScript
+### NativeScript
 
 http://tinyurl.com/progress-ebook
 
