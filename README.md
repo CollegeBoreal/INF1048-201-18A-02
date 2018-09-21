@@ -24,6 +24,12 @@ https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
 
 https://codecraft.tv/courses/angular/ (Angular 5 free eBook)
 
+
+
 ## NativeScript
 
 http://tinyurl.com/progress-ebook
+
+https://play.nativescript.org/ (i.r. equivalent plunker)
+
+https://nativescripting.com/ (Cours Gratuits)
