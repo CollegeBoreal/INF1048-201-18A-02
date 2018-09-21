@@ -35,3 +35,5 @@ http://tinyurl.com/progress-ebook
 https://play.nativescript.org/ (i.r. equivalent plunker)
 
 https://nativescripting.com/ (Cours Gratuits)
+
+https://market.nativescript.org/ (plugins)
