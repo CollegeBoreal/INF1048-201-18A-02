@@ -13,9 +13,9 @@ $ npm install --global webpack
 https://webpack.js.org/guides/getting-started/
 
 ```
-$ mkdir webpack-demo && cd webpack-demo
-$ npm init -y
-$ npm install --save-dev webpack
+mkdir webpack-demo && cd webpack-demo
+npm init -y
+npm install webpack webpack-cli --save-dev
 ```
 
 

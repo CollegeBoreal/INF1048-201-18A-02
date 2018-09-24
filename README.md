@@ -14,7 +14,9 @@ Programmation et scripts - Automne 2018
 | 3|18-09-17|[2.WebPack](2.WebPack)       | WebPack                                 |  Packages et Librairies                |
 
 
-References:
+# References:
+
+### Angular
 
 https://eloquentjavascript.net/ (Livre du cours)
 
@@ -23,3 +25,15 @@ https://js.do/ (Tester JS en ligne)
 https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
 
 https://codecraft.tv/courses/angular/ (Angular 5 free eBook)
+
+
+
+### NativeScript
+
+http://tinyurl.com/progress-ebook
+
+https://play.nativescript.org/ (i.r. equivalent plunker)
+
+https://nativescripting.com/ (Cours Gratuits)
+
+https://market.nativescript.org/ (plugins)
