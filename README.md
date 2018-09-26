@@ -18,7 +18,9 @@ Programmation et scripts - Automne 2018
 
 ### Angular
 
-https://eloquentjavascript.net/ (Livre du cours)
+https://eloquentjavascript.net/ (Livre du cours pour JavaScript)
+
+https://www.manning.com/books/angular-in-action (Livre du cours pour Angular[2,3,4,5,6])
 
 https://js.do/ (Tester JS en ligne)
 
