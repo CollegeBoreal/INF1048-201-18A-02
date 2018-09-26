@@ -20,13 +20,18 @@ Programmation et scripts - Automne 2018
 
 https://eloquentjavascript.net/ (Livre du cours pour JavaScript)
 
-https://www.manning.com/books/angular-in-action (Livre du cours pour Angular[2,3,4,5,6])
+https://codecraft.tv/courses/angular/ (Angular 5 free eBook)
+
+* https://codecraft.tv/assets/books/angular-from-theory-to-practice.pdf
+
+__https://www.manning.com/books/angular-in-action (Livre du cours pour Angular[2,3,4,5,6])__
 
 https://js.do/ (Tester JS en ligne)
 
 https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
 
-https://codecraft.tv/courses/angular/ (Angular 5 free eBook)
+
+
 
 
 
