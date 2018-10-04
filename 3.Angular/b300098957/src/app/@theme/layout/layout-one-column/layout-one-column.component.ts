@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-layout-one-column',
   template: `
+<!--
     <nb-layout>
       <nb-layout-header fixed>Company Name</nb-layout-header>
 
@@ -10,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 
       <nb-layout-column>Page Content</nb-layout-column>
     </nb-layout>
+-->
+    Layout
   `,
   styleUrls: ['./layout-one-column.component.scss']
 })
