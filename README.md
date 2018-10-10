@@ -23,6 +23,8 @@ https://eloquentjavascript.net/ (Livre du cours pour JavaScript)
 
 https://codecraft.tv/courses/angular/ (Angular 5 free eBook)
 
+https://books.ninja-squad.com/angular#samples
+
 --https://www.manning.com/books/angular-in-action (Livre du cours pour Angular[2,3,4,5,6])--
 
 https://js.do/ (Tester JS en ligne)
