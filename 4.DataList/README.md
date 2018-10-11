@@ -6,6 +6,10 @@ https://github.com/CollegeBoreal/Tutoriels/tree/master/3.Angular/B.Theme
 
 * Créer un service pour récupérer les données 
 
+```
+ng generate service
+```
+
 
 https://pokeapi.co/api/v2/pokemon?limit=15
 
