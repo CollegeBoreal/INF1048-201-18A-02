@@ -7,7 +7,7 @@ https://github.com/CollegeBoreal/Tutoriels/tree/master/3.Angular/B.Theme
 * Créer un service pour récupérer les données 
 
 ```
-ng generate service
+$ ng generate service services/pokemon
 ```
 
 
