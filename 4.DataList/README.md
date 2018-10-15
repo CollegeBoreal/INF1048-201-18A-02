@@ -23,11 +23,13 @@ https://www.w3schools.com/js/js_json_intro.asp
 http://reactivex.io/
 
 ```
-import "rxjs/Rx";
+import {HttpClient} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {catchError} from 'rxjs/internal/operators';
 ```
 
 ```
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
 ```
