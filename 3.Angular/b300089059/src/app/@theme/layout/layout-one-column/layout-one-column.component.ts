@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       <nb-layout>
         <nb-layout-header fixed>Company Name</nb-layout-header>
 
-        <nb-sidebar>Sidebar Content</nb-sidebar>
+        <!--<nb-sidebar>Sidebar Content</nb-sidebar>&lt;!&ndash;&ndash;&gt;-->
 
         <nb-layout-column>Page Content</nb-layout-column>
       </nb-layout>

@@ -10,7 +10,7 @@ import {ThemeModule} from '../@theme/theme.module';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    ThemeModule
+    ThemeModule .forRoot()
   ],
   declarations: [PagesComponent]
 })
