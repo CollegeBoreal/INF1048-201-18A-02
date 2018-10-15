@@ -54,5 +54,19 @@ import {catchError} from 'rxjs/internal/operators';
   }
 ```
 
-Devoir: Recuperer les informations (Pokemon) grace a la librairie rxjs/Rx et l'afficher dans un composant
+Utiliser ngfor
+
+```
+  <div *ngFor="let pokemon of pokemons; let i = index">
+    <span>{{i}}</span>
+    <span> {{pokemon.name}}</span>
+    <img src="../../assets/pokemon/{{i+1}}.png" alt="{{pokemon.name}}">
+  </div>
+  ```
+
+
+
+Devoir: 
+
+Recuperer les informations (Pokemon) grace a la librairie rxjs/Rx et l'afficher dans un composant
 
