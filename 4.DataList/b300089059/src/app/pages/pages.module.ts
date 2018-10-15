@@ -5,12 +5,11 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import {ThemeModule} from '../@theme/theme.module';
 
-
 @NgModule({
   imports: [
     CommonModule,
     PagesRoutingModule,
-    ThemeModule .forRoot()
+    ThemeModule
   ],
   declarations: [PagesComponent]
 })

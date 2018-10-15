@@ -23,11 +23,13 @@ https://www.w3schools.com/js/js_json_intro.asp
 http://reactivex.io/
 
 ```
-import "rxjs/Rx";
+import {HttpClient} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {catchError} from 'rxjs/internal/operators';
 ```
 
 ```
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
 ```
@@ -52,5 +54,19 @@ import "rxjs/Rx";
   }
 ```
 
-Devoir: Recuperer les informations (Pokemon) grace a la librairie rxjs/Rx et l'afficher dans un composant
+Utiliser ngfor
+
+```
+  <div *ngFor="let pokemon of pokemons; let i = index">
+    <span>{{i}}</span>
+    <span> {{pokemon.name}}</span>
+    <img src="../../assets/pokemon/{{i+1}}.png" alt="{{pokemon.name}}">
+  </div>
+  ```
+
+
+
+Devoir: 
+
+Recuperer les informations (Pokemon) grace a la librairie rxjs/Rx et l'afficher dans un composant
 
