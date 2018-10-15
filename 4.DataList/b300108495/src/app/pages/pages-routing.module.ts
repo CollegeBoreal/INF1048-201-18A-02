@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule, ExtraOptions} from '@angular/router';
+import {PagesComponent} from './pages.component';
 
-const routes: Routes = [
-  { path: 'pages', loadChildren: './pages/pages.module#PagesModule' },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
-];
-
-const config: ExtraOptions = {
-  useHash: true,
-};
+const routes: Routes = [{
+  path: '',
+  component: PagesComponent,
+}];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, config)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class PagesRoutingModule { }
