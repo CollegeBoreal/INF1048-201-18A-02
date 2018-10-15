@@ -11,6 +11,7 @@ export class PokemonService {
   }
 
   pokemonInit(){
+/*
     let pokemons: Array<any> = [];
 
     this.http.get('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -26,5 +27,6 @@ export class PokemonService {
       );
 
     return pokemons;
+*/
   }
 }
