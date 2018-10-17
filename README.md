@@ -31,9 +31,9 @@ https://js.do/ (Tester JS en ligne)
 
 https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
 
+string-interpolation-and-template-literals
 
-
-
+https://medium.com/@SunnyB/switching-to-es6-part-2-string-interpolation-and-template-literals-2f1b0ee56740
 
 
 ### NativeScript
