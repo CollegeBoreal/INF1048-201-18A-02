@@ -5,4 +5,6 @@ Créer deux tableaux dans une page HTML en utilisant deux paragraphes construits
 
 ## Eloquent Javascript
 
-https://eloquentjavascript.net/01_values.html
+
+[Values](https://eloquentjavascript.net/01_values.html)
+[Values](https://eloquentjavascript.net/01_values.html)
