@@ -35,6 +35,10 @@ string-interpolation-and-template-literals
 
 https://medium.com/@SunnyB/switching-to-es6-part-2-string-interpolation-and-template-literals-2f1b0ee56740
 
+Angular Decorators
+
+https://toddmotto.com/angular-decorators
+
 
 ### NativeScript
 
