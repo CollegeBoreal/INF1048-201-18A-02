@@ -39,6 +39,10 @@ Angular Decorators
 
 https://toddmotto.com/angular-decorators
 
+Authentication
+
+https://www.linkedin.com/pulse/angular-6-login-session-authentication-reactive-form-validation-das
+
 
 ### NativeScript
 
