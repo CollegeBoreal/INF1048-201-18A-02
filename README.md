@@ -35,13 +35,17 @@ string-interpolation-and-template-literals
 
 https://medium.com/@SunnyB/switching-to-es6-part-2-string-interpolation-and-template-literals-2f1b0ee56740
 
-Angular Decorators
+* Angular Decorators
 
 https://toddmotto.com/angular-decorators
 
-Authentication
+* Authentication
 
 https://www.linkedin.com/pulse/angular-6-login-session-authentication-reactive-form-validation-das
+
+* Template Driven vs Model Driven (i.e. Functional)
+
+https://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/#disqus_thread
 
 
 ### NativeScript
