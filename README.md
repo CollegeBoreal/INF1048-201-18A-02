@@ -57,3 +57,7 @@ https://play.nativescript.org/ (i.r. equivalent plunker)
 https://nativescripting.com/ (Cours Gratuits)
 
 https://market.nativescript.org/ (plugins)
+
+Why Flutter uses Dart?
+
+https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
