@@ -54,6 +54,10 @@ https://blog.angular-university.io/introduction-to-angular-2-forms-template-driv
 
 https://medium.mybridge.co/angular-open-source-projects-for-the-past-year-v-2018-dba2041e6ff8
 
+* PWA (Progressive Web Applications)
+
+https://houssein.me/progressive-angular-applications
+
 
 ### NativeScript
 
