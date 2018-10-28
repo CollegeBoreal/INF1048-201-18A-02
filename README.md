@@ -47,6 +47,10 @@ https://www.linkedin.com/pulse/angular-6-login-session-authentication-reactive-f
 
 https://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/#disqus_thread
 
+* angular-open-source-projects-for-the-past-year-v-2018
+
+https://medium.mybridge.co/angular-open-source-projects-for-the-past-year-v-2018-dba2041e6ff8
+
 
 ### NativeScript
 
