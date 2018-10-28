@@ -11,7 +11,7 @@ Programmation et scripts - Automne 2018
 |--|--------|:----------------------------|:----------------------------------------|:---------------------------------------|
 | 1|03-09-18|[0.JavaScript](0.JavaScript) | Javascript                              |  Introduction a JavaScript             |
 | 2|10-09-18|[1.shadowDOM](1.shadowDOM)   | Shadow DOM                              |  Introduction au `shadow DOM`          |
-| 3|17-09-18|[2.WebPack](2.WebPack)       | WebPack                                 |  Packages et Librairies                |
+| 3|24-09-18|[2.WebPack](2.WebPack)       | WebPack                                 |  Packages et Librairies                |
 | 3|02-10-18|[3.Angular](3.Angular)       | Angular                                 |  Google Framework .                    |
 
 
