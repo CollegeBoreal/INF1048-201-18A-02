@@ -22,7 +22,7 @@ Programmation et scripts - Automne 2018
 
 | Livres                                                                         |  Commentaires                          |
 |--------------------------------------------------------------------------------|:---------------------------------------|
-|[https://eloquentjavascript.net](https://eloquentjavascript.net                 |  Livre du cours pour JavaScript        |
+|[https://eloquentjavascript.net](https://eloquentjavascript.net)                |  Livre du cours pour JavaScript        |
 
  ()
 
