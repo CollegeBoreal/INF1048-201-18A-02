@@ -20,7 +20,11 @@ Programmation et scripts - Automne 2018
 
 ### Angular
 
-https://eloquentjavascript.net/ (Livre du cours pour JavaScript)
+| Livres                                                                         |  Commentaires                          |
+|--------------------------------------------------------------------------------|:---------------------------------------|
+|[https://eloquentjavascript.net](https://eloquentjavascript.net                 |  Livre du cours pour JavaScript        |
+
+ ()
 
 https://codecraft.tv/courses/angular/ (Angular 5 free eBook)
 
