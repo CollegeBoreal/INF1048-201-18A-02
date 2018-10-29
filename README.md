@@ -14,6 +14,7 @@ Programmation et scripts - Automne 2018
 | 3|24-09-18|[2.WebPack](2.WebPack)       | WebPack                                 |  Packages et Librairies                |
 | 3|01-10-18|[3.Angular](3.Angular)       | Angular CDK                             |  Google and Nebular Framework .        |
 | 4|15-10-18|[4.Datalist](4.Datalist)     | @Core Services                          |  Angular Techniques                    |
+| 4|29-10-18|[4.Datalist](4.Datalist)     | @Input {{ interpolation }}              |  Angular Techniques                    |
 
 
 # References:
