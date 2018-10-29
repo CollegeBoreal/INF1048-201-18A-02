@@ -1,14 +1,15 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NbLayoutModule, NbSidebarModule, NbThemeModule} from '@nebular/theme';
+import {NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule} from '@nebular/theme';
 import { LayoutOneColumnComponent } from './layout/layout-one-column/layout-one-column.component';
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
 const NB_MODULES = [
   NbLayoutModule,
-  NbSidebarModule
+  NbSidebarModule,
+  NbMenuModule
 ];
 
 const COMPONENTS = [
@@ -17,7 +18,8 @@ const COMPONENTS = [
 
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot({ name: 'default' }).providers,
-  ...NbSidebarModule.forRoot().providers
+  ...NbSidebarModule.forRoot().providers,
+  ...NbMenuModule.forRoot().providers
 ];
 
 @NgModule({
