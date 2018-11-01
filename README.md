@@ -28,13 +28,24 @@ Programmation et scripts - Automne 2018
 |[https://codecraft.tv/courses/angular](https://codecraft.tv/courses/angular/)   |  Angular 5 free eBook                  |
 |[https://www.manning.com/books/angular-in-action](https://www.manning.com/books/angular-in-action) | Livre du cours pour Angular[2,3,4,5,6] |
 
+## Tester en Ligne
+
+| Livres                                                                         |  Commentaires                          |
+|--------------------------------------------------------------------------------|:---------------------------------------|
+| [https://js.do/](https://js.do/)                                               | Tester Javascript                      |
+| [https://stackblitz.com/fork/angular](https://stackblitz.com/fork/angular)     | Tester Angular                         |
+
+
+## Examples
+
+the-broken-promise-of-web-components
+
+https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
+
+angular#samples
 
 https://books.ninja-squad.com/angular#samples
 
-
-https://js.do/ (Tester JS en ligne)
-
-https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
 
 string-interpolation-and-template-literals
 
