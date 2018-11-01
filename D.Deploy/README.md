@@ -36,10 +36,6 @@ events {
     worker_connections 1024;
 }
 
-upstream my-backend {   
-    server url:port;
-}
-
 http {
     server {
        listen 80;
@@ -47,11 +43,6 @@ http {
        location / {
            root /var/http;
            index index.html index.htm;
-       }
-
-       location /api {
-           proxy_pass http://my-backend;
-           proxy_set_header Host $host;
        }
     }
 }
