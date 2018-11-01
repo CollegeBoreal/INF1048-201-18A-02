@@ -1,4 +1,6 @@
+# Deploiement
 
+## Dans votre propre répertoire
 
 ### Créer le fichier de configuration Docker (Docker makefile ou Dockerfile)
 
