@@ -70,6 +70,31 @@ $ ng new angular --style=scss
 $ cd angular && ng build --progress --prod --aot && cd ..
 ```
 
+## Docker
+
+### Créer l'image Docker
+
+```
+$ docker image build .
+```
+
+### Récupérer l'ID de l'image
+
+```
+$ docker images
+```
+
+### Donner un nom et version à l'image
+
+```
+$ docker image tag c564758990e0 myapp:latest
+```
+
+## Éxécuter le conteneur
+
+```
+$ docker run --name myApp --detach --publish 80:80 myapp:latest
+```
 
 # Références 
 
