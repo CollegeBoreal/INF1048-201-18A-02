@@ -51,6 +51,18 @@ http {
 }
 ```
 
+### Créer votre projet Angular
+
+```
+$ ng new angular --style=scss
+```
+
+### Générer les fichiers 'Webpack'
+
+```
+$ cd angular && ng build --progress --prod --aot && cd ..
+```
+
 
 # Références 
 
