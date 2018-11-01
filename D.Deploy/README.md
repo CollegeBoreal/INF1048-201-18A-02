@@ -25,19 +25,28 @@ $ mkdir conf
 ```
 $ cat <<EOF > conf/nginx.conf
 worker_processes 1;
-daemon off;
-error_log nginx_error.log;
+
 events {
     worker_connections 1024;
 }
 
+upstream my-backend {   
+    server url:port;
+}
+
 http {
     server {
-        listen 8008;
+       listen 80;
 
-        location / {
-            root /Users/bsergean/src/sandbox/json/jsoncpp;
-        }
+       location / {
+           root /var/http;
+           index index.html index.htm;
+       }
+
+       location /api {
+           proxy_pass http://my-backend;
+           proxy_set_header Host $host;
+       }
     }
 }
 ```
