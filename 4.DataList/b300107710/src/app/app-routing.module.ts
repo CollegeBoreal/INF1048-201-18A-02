@@ -4,7 +4,8 @@ import {Routes, RouterModule, ExtraOptions} from '@angular/router';
 const routes: Routes = [
   { path: 'pages', loadChildren: './pages/pages.module#PagesModule' },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' }];
+  { path: '**', redirectTo: 'pages' },
+];
 
 const config: ExtraOptions = {
   useHash: true,
