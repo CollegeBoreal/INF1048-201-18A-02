@@ -55,6 +55,7 @@ http {
        }
     }
 }
+EOF
 ```
 
 ### Créer votre projet Angular
