@@ -52,7 +52,7 @@ EOF
 ### Créer votre projet Angular
 
 ```
-$ ng new angular --style=scss
+$ ng new angular --style=scss --routing=true
 ```
 
 ### Générer les fichiers 'Webpack'
