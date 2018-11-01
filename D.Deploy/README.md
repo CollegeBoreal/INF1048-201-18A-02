@@ -2,6 +2,10 @@
 
 ## Dans votre propre répertoire
 
+```
+$ mkdir <monID> && cd $_
+```
+
 ### Créer le fichier de configuration Docker (Docker makefile ou Dockerfile)
 
 ```
