@@ -6,6 +6,7 @@
 $ mkdir <monID> && cd $_
 ```
 
+## [nginx](https://www.nginx.com/) 
 
 ### Créer le répertoire de configuration de NGINX
 
@@ -36,6 +37,8 @@ http {
 EOF
 ```
 
+## [Angular](https://angular.io)
+
 ### Créer votre projet Angular
 
 ```
@@ -48,7 +51,7 @@ $ ng new angular --style=scss --routing=true
 $ cd angular && ng build --progress --prod --aot && cd ..
 ```
 
-## Docker
+## [Docker](https://docker.io)
 
 ### Créer le fichier de configuration Docker (Dockerfile: encore appellé le Docker makefile )
 
