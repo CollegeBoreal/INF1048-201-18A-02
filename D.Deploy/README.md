@@ -79,7 +79,7 @@ $ docker images
 ### Donner un nom et version à l'image (Tagger)
 
 ```
-$ docker image tag c564758990e0 myapp:latest
+$ docker image tag <image ID> myapp:latest
 ```
 
 ## Éxécuter le conteneur en utilisant le `tag`
