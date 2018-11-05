@@ -36,6 +36,10 @@ Programmation et scripts - Automne 2018
 | [https://stackblitz.com/fork/angular](https://stackblitz.com/fork/angular)     | Tester Angular                         |
 
 
+## Chrome Debug
+
+https://www.jetbrains.com/help/webstorm/live-editing.html
+
 ## Examples
 
 the-broken-promise-of-web-components
