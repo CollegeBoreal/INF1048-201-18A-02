@@ -6,19 +6,6 @@
 $ mkdir <monID> && cd $_
 ```
 
-### Créer le fichier de configuration Docker (Docker makefile ou Dockerfile)
-
-```
-$ cat <<EOF > Dockerfile
-FROM nginx
-
-RUN rm /etc/nginx/conf.d/default.conf
-
-COPY conf /etc/nginx
-
-COPY angular/dist/angular /var/http
-EOF
-```
 
 ### Créer le répertoire de configuration de NGINX
 
@@ -63,7 +50,21 @@ $ cd angular && ng build --progress --prod --aot && cd ..
 
 ## Docker
 
-### Créer l'image Docker
+### Créer le fichier de configuration Docker (Dockerfile: encore appellé le Docker makefile )
+
+```
+$ cat <<EOF > Dockerfile
+FROM nginx
+
+RUN rm /etc/nginx/conf.d/default.conf
+
+COPY conf /etc/nginx
+
+COPY angular/dist/angular /var/http
+EOF
+```
+
+### Créer l'image Docker du projet
 
 ```
 $ docker image build .
@@ -75,13 +76,13 @@ $ docker image build .
 $ docker images
 ```
 
-### Donner un nom et version à l'image
+### Donner un nom et version à l'image (Tagger)
 
 ```
-$ docker image tag c564758990e0 myapp:latest
+$ docker image tag <image ID> myapp:latest
 ```
 
-## Éxécuter le conteneur
+## Éxécuter le conteneur en utilisant le `tag`
 
 ```
 $ docker run --name myApp --detach --publish 80:80 myapp:latest
