@@ -42,6 +42,11 @@ https://www.jetbrains.com/help/webstorm/live-editing.html
 
 ## Examples
 
+
+Token vs Cookie
+
+https://auth0.com/blog/ten-things-you-should-know-about-tokens-and-cookies/
+
 the-broken-promise-of-web-components
 
 https://dmitriid.com/blog/2017/03/the-broken-promise-of-web-components/
