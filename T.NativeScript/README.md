@@ -19,9 +19,9 @@ $ tns --version
 
  NativeScript Playground app   :mahjong:
  
-* Remplacer votre <ID> par votre propre :id:
+* Remplacer votre `<ID>` par votre propre :id:
  
-* Remplacer votre <template> par :
+* Remplacer votre `<template>` par :
  
  - angular
  
