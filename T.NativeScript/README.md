@@ -21,7 +21,7 @@ $ tns --version
  
 * Remplacer votre `<ID>` par votre propre :id:
  
-* Remplacer votre `<template>` par :
+* Remplacer `<template>` par :
  
  - angular
  
