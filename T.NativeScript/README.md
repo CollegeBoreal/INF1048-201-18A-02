@@ -21,13 +21,14 @@ $ tns --version
  
 * Remplacer votre <ID> par votre propre :id:
  
-* Remplacer votre <template> par votre propre:
+* Remplacer votre <template> par :
  
  - angular
  
  - tns-template-drawer-navigation-ng
 
  - tns-template-tab-navigation-ng
+
 
  
 ```
