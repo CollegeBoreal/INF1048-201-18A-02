@@ -19,7 +19,9 @@ $ tns --version
 
  NativeScript Playground ap   
  
+* Remplacer votre <ID> par votre propre :ID:
+ 
 ```
-$ tns create b300098957 --template tns-template-drawer-navigation-tsp
+$ tns create b<ID> --template tns-template-drawer-navigation-tsp
 ```
 
