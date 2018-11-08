@@ -25,3 +25,9 @@ $ tns --version
 $ tns create b<ID> --template angular # ou --template tns-template-drawer-navigation-ng
 ```
 
+ou
+
+```
+$ tns create b<ID> --template angular # ou --template tns-template-tab-navigation-ng
+```
+
