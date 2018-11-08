@@ -14,7 +14,11 @@
       "node_modules/@types"
     ],
     "lib": [
+<<<<<<< HEAD
       "es2017",
+=======
+      "es2018",
+>>>>>>> 931d3ea90b61dc9acb2c35a0be46f32e63b17ce7
       "dom"
     ]
   }

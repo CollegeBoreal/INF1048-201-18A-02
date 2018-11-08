@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule, ExtraOptions} from '@angular/router';
 
-const routes: Routes = [{ path: 'pages', loadChildren: './pages/pages.module#PagesModule' },
+const routes: Routes = [
+  { path: 'pages', loadChildren: './pages/pages.module#PagesModule' },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' }];
 
@@ -10,7 +11,7 @@ const config: ExtraOptions = {
 };
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, config)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

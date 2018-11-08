@@ -47,7 +47,18 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
+<<<<<<< HEAD
               "buildOptimizer": true
+=======
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+>>>>>>> 931d3ea90b61dc9acb2c35a0be46f32e63b17ce7
             }
           }
         },
@@ -102,6 +113,10 @@
     "angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
+<<<<<<< HEAD
+=======
+      "prefix": "",
+>>>>>>> 931d3ea90b61dc9acb2c35a0be46f32e63b17ce7
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",

@@ -1,7 +1,7 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NbThemeModule} from '@nebular/theme';
+import {NbMenuModule, NbThemeModule} from '@nebular/theme';
 import { LayoutOneColumnComponent } from './layout/layout-one-column/layout-one-column.component';
 
 import {NbLayoutModule, NbSidebarModule} from '@nebular/theme';
@@ -23,10 +23,11 @@ const COMPONENTS = [
   LayoutOneColumnComponent
 ];
 
+
 // @ts-ignore
 @NgModule({
   imports: [...BASE_MODULES, ...NB_MODULES],
-  exports: [...BASE_MODULES, ...NB_MODULES],
+  exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS],
   declarations: [LayoutOneColumnComponent]
 })
 export class ThemeModule {
