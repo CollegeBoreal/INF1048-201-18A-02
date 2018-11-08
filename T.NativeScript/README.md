@@ -17,7 +17,7 @@ $ tns --version
 
 ## Installer  
 
- NativeScript Playground ap   :smile:
+ NativeScript Playground ap   :happy:
  
 * Remplacer votre <ID> par votre propre :id:
  
