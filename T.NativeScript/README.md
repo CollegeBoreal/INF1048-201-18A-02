@@ -17,7 +17,7 @@ $ tns --version
 
 ## Installer  
 
- NativeScript Playground app   :copyright:
+ NativeScript Playground app   :mahjong:
  
 * Remplacer votre <ID> par votre propre :id:
  
