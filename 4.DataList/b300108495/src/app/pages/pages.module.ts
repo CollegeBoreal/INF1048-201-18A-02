@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import {ThemeModule} from '../@theme/theme.module';
-import {BonjourComponent} from './bonjour.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -12,6 +12,6 @@ import {BonjourComponent} from './bonjour.component';
     PagesRoutingModule,
     ThemeModule
   ],
-  declarations: [PagesComponent, BonjourComponent]
+  declarations: [PagesComponent, DashboardComponent]
 })
 export class PagesModule { }
