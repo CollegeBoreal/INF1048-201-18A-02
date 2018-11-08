@@ -31,6 +31,6 @@ ou
 $ tns create b<ID> --template angular # ou --template tns-template-tab-navigation-ng
 ```
 
-References: 
+# References: 
 
 https://docs.nativescript.org/app-and-screen-templates/app-templates
