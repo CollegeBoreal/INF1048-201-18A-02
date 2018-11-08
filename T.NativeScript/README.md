@@ -22,6 +22,6 @@ $ tns --version
 * Remplacer votre <ID> par votre propre :id:
  
 ```
-$ tns create b<ID> --template angular # ou --template tns-template-drawer-navigation-tsp
+$ tns create b<ID> --template angular # ou --template tns-template-drawer-navigation-ng
 ```
 
