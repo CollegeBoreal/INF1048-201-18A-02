@@ -1,0 +1,21 @@
+{
+	"time": "Thu Nov 08 2018 13:06:11 GMT-0500 (Eastern Standard Time)",
+	"nativePlatformStatus": "1",
+	"bundle": false,
+	"release": false,
+	"changesRequireBuild": true,
+	"projectFileHash": "57daa9fe0beb27c9a36a7345687bd11a57536a6b1dbe465ba5ba94208b9eebe2",
+	"changesRequireBuildTime": "Thu Nov 08 2018 13:06:11 GMT-0500 (Eastern Standard Time)",
+	"appFilesHashes": {
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\app.css": "6b35cf7fc669764bd611ef9fe3164457246cfaed",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\app-root.xml": "900a386cb2d8abc9573413eb3aff45448dcd3608",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\app.ts": "d2aee20ec12265aac675d8f866c60b7d03ec5bb6",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\app.js": "d2291dc4827adda4b6003911539e4702df962fa8",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\main-page.ts": "07dbf12d1643feb07948ecaa3e4e4ec8febf1cd9",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\main-page.js": "81b6657ed85deabeafd2083ffb9683b11f8c092f",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\main-page.xml": "b0bee0004c8224a6bbf2a46b3bd5bb9b7fad11ff",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\main-view-model.ts": "b34974bc2be511015c5570aa3a8ad2a85153b984",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\main-view-model.js": "b7c37353da59e2eb5558c8c01f60885598dee857",
+		"C:\\Users\\Safaa\\Developer\\INF1048-201-18A-02\\7.Mobile\\b300108495\\app\\package.json": "554a1e7b09cfa1663c75683765118999cb11411a"
+	}
+}
