@@ -1,4 +1,4 @@
-# Projetv Angular
+# Projet Angular
 
 
 * Equipe [A-S]
