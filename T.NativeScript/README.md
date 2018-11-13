@@ -5,7 +5,7 @@
 ## Installer NativeScript CLI
 
 ```
-$ npm install --global nativescript
+$ npm install --global nativescript@latest
 ```
 
 ## Tester l'installation
