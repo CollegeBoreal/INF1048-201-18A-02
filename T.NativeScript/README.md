@@ -43,6 +43,10 @@ https://stackoverflow.com/questions/45397523/how-to-debug-nativescript-app-in-ch
 $ tns debug -ios chrome
 ```
 
+* Reperer l'URL dans la sortie d'ecran et la copier dans chrome
+
+![alt tag](./debug.png)
+
 
 # References: 
 
