@@ -35,7 +35,7 @@ $ tns --version
 $ tns create b<ID> --template <template>
 ```
 
-## Debug
+## Debug (Console)
 
 https://stackoverflow.com/questions/45397523/how-to-debug-nativescript-app-in-chrome-browser-and-view-output-in-chrome
 
