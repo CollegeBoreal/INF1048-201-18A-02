@@ -98,7 +98,7 @@ $ docker image tag <image ID> myapp:latest
 ## Éxécuter le conteneur en utilisant le `tag`
 
 ```
-$ docker run --name myApp --detach --publish 80:80 myapp:latest
+$ docker run --name myApp --detach --publish 4200:80 myapp:latest
 ```
 
 # Références 
