@@ -1,0 +1,41 @@
+La déclaration d'une classe ou fonction générique doit être précédée par :
+
+template <typename T, typename U>
+
+Le mot clé class peut être utilisé à la place de typename. Les types T et U pourront alors être utilisés dans le corps de la classe
+ou de la fonction.
+
+Avec les classes, on peut aussi se servir de la généricité pour utiliser une valeur constante :
+
+template <typename T, int N>
+La valeur entière N pourra être utilisée dans la classe comme s'il s'agissait d'un entier constant.
+
+Chaque type ou valeur déclaré peut posséder une valeur par défaut, comme les arguments muets d'une fonction.
+
+Il y a deux types de patrons.
+
+✨ Les patrons de fonction 
+
+Un patron de fonction pourra supporter n'importe quel type pour ses arguments. Par exemple :
+
+template <typename T>
+T min (const T &x, const T &y)
+{ return (x<y)? x:y; }
+ 
+✨  Appel à la fonction
+
+Voici un exemple d'utilisation :
+
+#include <iostream>
+
+int main ()
+{
+    // Appel de min<int>
+    std::cout << min(-20, 5) << ' ';
+    // Appel de min<double>
+    std::cout << min(6.4, -17.3) << ' ';
+    // Appel de min<double> ; le type doit être précisé pour pallier l'ambiguïté
+    std::cout << min<double>(6.96e2, 48) << std::endl;
+
+    return 0;
+}

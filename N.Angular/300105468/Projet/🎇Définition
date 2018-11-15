@@ -1,0 +1,41 @@
+En programmation informatique, les templates (en français modèles, parfois aussi appelés patrons) sont une particularité
+
+de la programmation en langage C++, qui autorise l'écriture d'un code sans considération envers le type des données avec
+
+lesquelles il sera finalement utilisé. Les templates introduisent le concept de programmation générique dans le langage.
+
+Les templates sont d'une grande utilité pour les programmeurs en C++, plus particulièrement en les combinant avec 
+
+l'héritage multiple, la surcharge d'opérateur ou plus généralement la programmation orientée objet.
+
+La bibliothèque standard de C++ fournit de nombreux outils utiles dans un cadre de travail fait avec les templates, en particulier
+dans la STL.
+
+Le mécanisme des templates a aussi été inclus dans d'autres langages objet comme Java, mais a une signification différente lors
+
+de la compilation, puisqu'il s'appuie sur la super-classe Object du langage.
+
+Les templates permettent à une classe (class, struct ou union) ou une fonction de pouvoir s'adapter à plusieurs types sans avoir
+
+besoin d'être recopiée ou surdéfinie.
+
+Les templates sont une alternative aux macros préprocesseur, déconseillées en C++. Certaines d'entre elles pourront donc être mises
+
+à niveau ; par exemple, la macro1 :
+
+#define MIN(a,b) (((a) < (b)) ? (a) : (b))
+pourra être remplacée en C++ par le patron de fonction2 :
+
+template <typename T>
+T min (const T &x, const T &y)
+{ return (x<y)? x:y; }
+
+De plus, en programmation orientée objet, il arrive souvent que l'on veuille écrire
+
+une classe sans considérer les types, ou certaines valeurs. Avec les langages non-objet, il était toujours possible
+
+de recopier la fonction en changeant les types là où c'est nécessaire, et ce pour chaque type de base. Seulement,
+
+la POO permet l'ajout de types définis par l'utilisateur qui ne peuvent pas être prévus. Les templates sont apparus
+
+pour pallier le problème.
