@@ -1,6 +1,20 @@
 
- ngModel est au coeur des "Template-driven Forms
+ 
 
+Un exemple de array json
+````
+{
+"nom":"tartuf",
+"age":50,
+"chapo":[ "bleu", "vert", "orange" ]
+}
+
+````
+
+
+ngModel est au coeur des "Template-driven Forms
+
+````
 @Component({
     templateUrl: './form.component.html'
 })
@@ -13,3 +27,4 @@ export class FormComponent {
         name="title"
         [(ngModel)]="Title">
 </form>
+````
