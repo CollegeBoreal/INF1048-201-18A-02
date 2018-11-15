@@ -1,0 +1,211 @@
+<a id="toc"></a>
+<h1>Template Syntax</h1>
+<a href="#interpolation">Interpolation</a><br>
+<a href="#expression-context">Expression context</a><br>
+<a href="#statement-context">Statement context</a><br>
+<a href="#mental-model">Mental Model</a><br>
+<a href="#buttons">Buttons</a><br>
+<a href="#prop-vs-attrib">Properties vs. Attributes</a><br>
+<br>
+<a href="#property-binding">Property Binding</a><br>
+<div style="margin-left:8px">
+  <a href="#attribute-binding">Attribute Binding</a><br>
+  <a href="#class-binding">Class Binding</a><br>
+  <a href="#style-binding">Style Binding</a><br>
+</div>
+<br>
+<a href="#event-binding">Event Binding</a><br>
+<a href="#two-way">Two-way Binding</a><br>
+<br>
+<div>Directives</div>
+<div style="margin-left:8px">
+  <a href="#ngModel">NgModel (two-way) Binding</a><br>
+  <a href="#ngClass">NgClass Binding</a><br>
+  <a href="#ngStyle">NgStyle Binding</a><br>
+  <a href="#ngIf">NgIf</a><br>
+  <a href="#ngFor">NgFor</a><br>
+  <div style="margin-left:8px">
+    <a href="#ngFor-index">NgFor with index</a><br>
+    <a href="#ngFor-trackBy">NgFor with trackBy</a><br>
+  </div>
+  <a href="#ngSwitch">NgSwitch</a><br>
+</div>
+<br>
+<a href="#ref-vars">Template reference variables</a><br>
+<a href="#inputs-and-outputs">Inputs and outputs</a><br>
+<a href="#pipes">Pipes</a><br>
+<a href="#safe-navigation-operator">Safe navigation operator <i>?.</i></a><br>
+<a href="#non-null-assertion-operator">Non-null assertion operator <i>!.</i></a><br>
+<a href="#enums">Enums</a><br>
+
+<!-- Interpolation and expressions -->
+<hr><h2 id="interpolation">Interpolation</h2>
+
+<p>My current hero is {{currentHero.name}}</p>
+
+<h3>
+  {{title}}
+  <img src="{{heroImageUrl}}" style="height:30px">
+</h3>
+
+<!-- "The sum of 1 + 1 is 2" -->
+<p>The sum of 1 + 1 is {{1 + 1}}</p>
+
+<!-- "The sum of 1 + 1 is not 4" -->
+<p>The sum of 1 + 1 is not {{1 + 1 + getVal()}}</p>
+
+<a class="to-toc" href="#toc">top</a>
+
+<hr><h2 id="expression-context">Expression context</h2>
+
+<p>Component expression context (&#123;&#123;title&#125;&#125;, [hidden]="isUnchanged")</p>
+<div class="context">
+  {{title}}
+  <span [hidden]="isUnchanged">changed</span>
+</div>
+
+
+<p>Template input variable expression context (let hero)</p>
+<!-- template hides the following; plenty of examples later -->
+<ng-template>
+  <div *ngFor="let hero of heroes">{{hero.name}}</div>
+</ng-template>
+
+<p>Template reference variable expression context (#heroInput)</p>
+<div (keyup)="0" class="context">
+  Type something:
+  <input #heroInput> {{heroInput.value}}
+</div>
+
+<a class="to-toc" href="#toc">top</a>
+
+<hr><h2 id="statement-context">Statement context</h2>
+
+<p>Component statement context ( (click)="onSave() )
+<div class="context">
+  <button (click)="deleteHero()">Delete hero</button>
+</div>
+
+<p>Template $event statement context</p>
+<div class="context">
+  <button (click)="onSave($event)">Save</button>
+</div>
+
+<p>Template input variable statement context (let hero)</p>
+<!-- template hides the following; plenty of examples later -->
+<div class="context">
+  <button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}}</button>
+</div>
+
+<p>Template reference variable statement context (#heroForm)</p>
+<div class="context">
+  <form #heroForm (ngSubmit)="onSubmit(heroForm)"> ... </form>
+</div>
+
+<a class="to-toc" href="#toc">top</a>
+
+<!-- New Mental Model -->
+<hr><h2 id="mental-model">New Mental Model</h2>
+
+<!--<img src="http://www.wpclipart.com/cartoon/people/hero/hero_silhoutte_T.png">-->
+<!-- Public Domain terms of use: http://www.wpclipart.com/terms.html -->
+<div class="special">Mental Model</div>
+<img src="assets/images/hero.png">
+<button disabled>Save</button>
+<br><br>
+
+<div>
+  <!-- Normal HTML -->
+  <div class="special">Mental Model</div>
+  <!-- Wow! A new element! -->
+  <app-hero-detail></app-hero-detail>
+</div>
+<br><br>
+
+<div>
+  <!-- Bind button disabled state to `isUnchanged` property -->
+  <button [disabled]="isUnchanged">Save</button>
+</div>
+<br><br>
+
+<div>
+  <img [src]="heroImageUrl">
+  <app-hero-detail [hero]="currentHero"></app-hero-detail>
+  <div [ngClass]="{'special': isSpecial}"></div>
+</div>
+<br><br>
+
+<button (click)="onSave()">Save</button>
+<app-hero-detail (deleteRequest)="deleteHero()"></app-hero-detail>
+<div (myClick)="clicked=$event" clickable>click me</div>
+{{clicked}}
+<br><br>
+
+<div>
+  Hero Name:
+  <input [(ngModel)]="name">
+  {{name}}
+</div>
+<br><br>
+
+<button [attr.aria-label]="help">help</button>
+<br><br>
+
+<div [class.special]="isSpecial">Special</div>
+<br><br>
+
+<button [style.color]="isSpecial ? 'red' : 'green'">
+button</button>
+
+<a class="to-toc" href="#toc">top</a>
+
+<!-- property vs. attribute -->
+<hr><h2 id="prop-vs-attrib">Property vs. Attribute (img examples)</h2>
+<!-- examine the following <img> tag in the browser tools -->
+<img src="images/ng-logo.png"
+    [src]="heroImageUrl">
+
+<br><br>
+
+<img [src]="iconUrl"/>
+<img bind-src="heroImageUrl"/>
+<img [attr.src]="villainImageUrl"/>
+
+<a class="to-toc" href="#toc">top</a>
+
+<!-- buttons -->
+<hr><h2 id="buttons">Buttons</h2>
+
+<button>Enabled (but does nothing)</button>
+<button disabled>Disabled</button>
+<button disabled=false>Still disabled</button>
+<br><br>
+<button disabled>disabled by attribute</button>
+<button [disabled]="isUnchanged">disabled by property binding</button>
+<br><br>
+<button bind-disabled="isUnchanged" on-click="onSave($event)">Disabled Cancel</button>
+<button [disabled]="!canSave" (click)="onSave($event)">Enabled Save</button>
+
+<a class="to-toc" href="#toc">top</a>
+
+<!-- property binding -->
+<hr><h2 id="property-binding">Property Binding</h2>
+
+<img [src]="heroImageUrl">
+<button [disabled]="isUnchanged">Cancel is disabled</button>
+<div [ngClass]="classes">[ngClass] binding to the classes property</div>
+<app-hero-detail [hero]="currentHero"></app-hero-detail>
+<img bind-src="heroImageUrl">
+
+<!-- ERROR: HeroDetailComponent.hero expects a
+     Hero object, not the string "currentHero" -->
+<div *ngIf="false">
+  <app-hero-detail hero="currentHero"></app-hero-detail>
+</div>
+<app-hero-detail prefix="You are my" [hero]="currentHero"></app-hero-detail>
+
+<p><img src="{{heroImageUrl}}"> is the <i>interpolated</i> image.</p>
+<p><img [src]="heroImageUrl"> is the <i>property bound</i> image.</p>
+
+<p><span>"{{title}}" is the <i>interpolated</i> title.</span></p>
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
