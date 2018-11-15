@@ -28,7 +28,7 @@ $ ng serve
 ouvrez votre navigateur sur http: // localhost: 4200 /.
 
 Votre application vous accueille avec un message:
-{pic}
+![Alt.tag](angu.png)
 
 
 Afin d'ajouter un nouveau composant, on utilise la commande suivante:
@@ -40,6 +40,9 @@ $ng generate component (le nom)
 
 Le router Angular permet de naviguer d'une vue à l'autre lorsque les utilisateurs effectuent des tâches. 
 Il suffit de cliquez sur les liens de la page et le navigateur navigue vers une nouvelle page et puis sur les boutons Précédent / Suivant du navigateur et celui-ci navigue dans l'historique des pages que vous avez consultées.
+
+Voici les commandes à suivre:
+
 
 # Route Guards:
 
