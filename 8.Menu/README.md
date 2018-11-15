@@ -41,7 +41,15 @@ $ng generate component (le nom)
 Le "routing" Angular permet de naviguer d'une vue à l'autre lorsque les utilisateurs effectuent des tâches. 
 Il suffit de cliquez sur les liens de la page et le navigateur navigue vers une nouvelle page et puis sur les boutons Précédent / Suivant du navigateur et celui-ci navigue dans l'historique des pages que vous avez consultées.
 
+Pour intégrer "routing" dans l'application, voici les commandes à suivre:
 
+```
+ng generate module my-module --routing
+```
+
+```
+ng generate module app-routing --module app --flat
+```
 # Route Guards:
 
 Les "route guards" sont ajoutés à la configuration pour pouvoir gérer les utilisateurs naviguant sur les applications. La valeur de retour d'un "guard" contrôle le comportement de la route:
