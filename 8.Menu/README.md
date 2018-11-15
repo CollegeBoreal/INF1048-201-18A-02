@@ -30,6 +30,9 @@ ouvrez votre navigateur sur http: // localhost: 4200 /.
 Votre application vous accueille avec un message:
 {pic}
 
-# Routing:
+## Routing:
+
+Le router Angular permet de naviguer d'une vue à l'autre lorsque les utilisateurs effectuent des tâches. 
+Il suffit de cliquez sur les liens de la page et le navigateur navigue vers une nouvelle page et puis sur les boutons Précédent / Suivant du navigateur et celui-ci navigue dans l'historique des pages que vous avez consultées.
 
 
