@@ -30,6 +30,12 @@ ouvrez votre navigateur sur http: // localhost: 4200 /.
 Votre application vous accueille avec un message:
 {pic}
 
+
+Afin d'ajouter un nouveau composant, on utilise la commande suivante:
+```
+$ng generate component (le nom)
+```
+
 ## Routing:
 
 Le router Angular permet de naviguer d'une vue à l'autre lorsque les utilisateurs effectuent des tâches. 
