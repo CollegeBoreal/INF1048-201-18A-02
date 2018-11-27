@@ -45,7 +45,23 @@ Vous ouvres votre projet avec ``` webStorm``` et vous devez changer le code en s
 
 ##### src/index.html
 
-```<base href="/">```
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Set the base href -->
+  <base href="/">
+  <title>Welcome to our App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<app-root></app-root>
+</body>
+
+</html>
+```
 Avant qu'on face avec le reste de code vous devez creer des fichiers ```ts``` :
 
 ###### src/app/service.message.ts
@@ -202,6 +218,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 })
 export class AppModule { }
 ```
+## app.component.html ... nd son 
 # Configuration de menu Heroes :
 
 Créez un HeroesModule avec un routage dans le dossier heroes et enregistrez-le avec le racine AppModule. C'est là que vous allez mettre en place la gestion des héros.
@@ -212,7 +229,7 @@ $ ng generate module heroes/heroes --module app --flat --routing
 Assurez-vous que les fichiers suivants sont les memes commes suivant :
 ## src/app/heroes/heroes.module.ts 
 
-`
+```
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -234,11 +251,11 @@ import { HeroesRoutingModule } from './heroes-routing.module';
   ]
 })
 export class HeroesModule {}
-`
+```
 
 ## src/app/heroes/heroes-routing.module.ts
 
-``
+```
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -259,20 +276,21 @@ const heroesRoutes: Routes = [
   ]
 })
 export class HeroesRoutingModule { }
-``
+```
 Avant de continuer la configuration des autres fichiers :
 
 ## src/app/heroes/hero.ts
 
-``
+```
 export class Hero {
   id: number;
   name: string;
 }
-``
+```
+
 ## src/app/heroes/hero.service.ts
 
-``
+```
 import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
@@ -302,11 +320,11 @@ export class HeroService {
     );
   }
 }
-``
+```
 
 ## src/app/heroes/mock-heroes.ts
 
-``
+```
 import { Hero } from './hero';
 
 export const HEROES: Hero[] = [
@@ -319,7 +337,7 @@ export const HEROES: Hero[] = [
 
 ];
 
-``
+```
 Maintenant on doit changer les fichiers de` Heroes/hero-list `et ` Heroes/hero-detail `, danc il faut juste avoire exactement meme code suivant :
 
 ### 
