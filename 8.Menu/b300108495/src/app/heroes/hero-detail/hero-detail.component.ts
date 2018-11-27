@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import {HeroService} from '../hero.service';
 import {Hero} from '../hero';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-hero-detail',
@@ -10,6 +11,7 @@ import {Hero} from '../hero';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
+  private hero$: Observable<Hero>;
 
   constructor(
     private route: ActivatedRoute,
