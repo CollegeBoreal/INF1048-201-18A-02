@@ -17,7 +17,7 @@ $ npm install @angular/cli --global
 Alors, il faut creer votre projet ou vous voulez developper votre App ou bien votre Web ce qu'il faut faire :
 
 ```
-$ ng new OurApp --style=scss --routing=true && cd $_
+$ ng new b300XXXXX --style=scss --routing=true && cd $_
 ```
 La commande ng serve lance le serveur, surveille vos fichiers et reconstruit l'application
 
@@ -25,16 +25,20 @@ La commande ng serve lance le serveur, surveille vos fichiers et reconstruit l'a
 $ ng serve
 ```
 
-ouvrez votre navigateur sur http: // localhost: 4200 /.
+ouvrez votre navigateur sur http://localhost:4200/
 
 Votre application vous accueille avec un message:
 ![Alt.tag](angu.png)
 
 
-Afin d'ajouter un nouveau composant, on utilise la commande suivante:
+Notre menu d'aujourdhui c est Heroes :
+pic
+On Commence !
 ```
-$ng generate component (le nom)
+$ng generate component heroes/hero-list
+$ng generate component heroes/hero-detail
 ```
+
 
 ## Routing:
 
