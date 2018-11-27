@@ -11,9 +11,6 @@ Node.js (v8 ou 10) et npm package manager
 on l'utilise pour creer des projets, generer des applications et liberer le code.
 et on l'installe avec cette commande:
 
-```
-$ npm install @angular/cli --global
-```
 Alors, il faut creer votre projet ou vous voulez developper votre App ou bien votre Web ce qu'il faut faire :
 
 ```
@@ -21,7 +18,10 @@ $ ng new b300XXXXX --style=css --routing=true && cd $_
 ```
 La commande ng serve lance le serveur, surveille vos fichiers et reconstruit l'application
 
+Avant de lancer votre site vous devez etre dans ton projet qui est "b300XXXX"
+
 ```
+$ cd b300....
 $ ng serve
 ```
 
@@ -32,45 +32,294 @@ Votre application vous accueille avec un message:
 
 
 Notre menu d'aujourdhui c est Heroes :
+
 pic
+
 On Commence !
+
 ```
 $ng generate component heroes/hero-list
 $ng generate component heroes/hero-detail
 ```
+Vous ouvres votre projet avec ``` webStorm``` et vous devez changer le code en suivant ces parties:
 
+##### src/index.html
 
-## Routing:
+```<base href="/">```
+Avant qu'on face avec le reste de code vous devez creer des fichiers ```ts``` :
 
-Le "routing" Angular permet de naviguer d'une vue à l'autre lorsque les utilisateurs effectuent des tâches. 
-Il suffit de cliquez sur les liens de la page et le navigateur navigue vers une nouvelle page et puis sur les boutons Précédent / Suivant du navigateur et celui-ci navigue dans l'historique des pages que vous avez consultées.
-
-Pour intégrer "routing" dans l'application, voici les commandes à suivre (ouvrir un autre fenetre de git bash pour faire ces 2 commandes, puisque ng serve est en fonction):
-
-```
-$ng generate module my-module --routing
-```
+###### src/app/service.message.ts
 
 ```
-$ng generate module app-routing --module app --flat
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class MessageService {
+  messages: string[] = [];
+
+  add(message: string) {
+    this.messages.push(message);
+  }
+
+  clear() {
+    this.messages = [];
+  }
+}
 ```
-# Route Guards:
+###### src/app/selective-preloading-strategy.ts
 
-Les "route guards" sont ajoutés à la configuration pour pouvoir gérer les utilisateurs naviguant sur les applications. La valeur de retour d'un "guard" contrôle le comportement de la route:
+```
+import { Injectable } from '@angular/core';
+import { PreloadingStrategy, Route } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
--Si la valeur est "true", le processus de navigation se poursuit.
--S'il renvoie "false", le processus de navigation s'arrête et l'utilisateur reste en place. 
+@Injectable({
+  providedIn: 'root',
+})
+export class SelectivePreloadingStrategyService implements PreloadingStrategy {
+  preloadedModules: string[] = [];
 
-La route supporte plusieurs interfaces de "guards":
+  preload(route: Route, load: () => Observable<any>): Observable<any> {
+    if (route.data && route.data['preload']) {
+      // add the route path to the preloaded module array
+      this.preloadedModules.push(route.path);
 
-```CanActivate``` nécessite une authentification.
-Les applications limitent souvent l'accès à une zone de fonctionnalités en fonction de l'identité de l'utilisateur. Vous pouvez autoriser l'accès uniquement aux utilisateurs authentifiés ou aux utilisateurs dotés d'un rôle spécifique. Vous pouvez bloquer ou limiter l'accès jusqu'à l'activation du compte de l'utilisateur.
+      // log the route path to the console
+      console.log('Preloaded: ' + route.path);
 
-```CanActivateChild``` est similaire à la garde CanActivate. La principale différence est qu'il s'exécute avant l'activation de tout itinéraire "child". 
+      return load();
+    } else {
+      return of(null);
+    }
+  }
+}
 
-```CanDeactivate``` sert a faire une pause pour faire un sauvegarde de l'application. Il laisse l'utilisateur décider quoi faire. Si l'utilisateur annule, il restera donc sur place et autorisez d'autres modifications. Si l'utilisateur approuve, l'application peut enregistrer.
+```
+##### src/app/animation.ts
 
-```Resolve``` pour récupérer les données de route avant l'activation de la route. Il différe le rendu du composant routé jusqu'à ce que toutes les données nécessaires aient été extraites.
+```
+import {
+  trigger, animateChild, group,
+  transition, animate, style, query
+} from '@angular/animations';
 
-```CanLoad``` permet de naviguer dans un module de fonctions chargé de manière asynchronisé. Le route est définit par la méthode CanLoad.
 
+// Routable animations
+export const slideInAnimation =
+  trigger('routeAnimation', [
+    transition('heroes <=> hero', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%'})
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('300ms ease-out', style({ left: '100%'}))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%'}))
+        ])
+      ]),
+      query(':enter', animateChild()),
+    ])
+  ]);
+
+```
+## Intégrez le routage à votre application:
+
+Cela crée un fichier séparé nommé my-module-routing.module.ts pour stocker les itinéraires du NgModule. Le fichier comprend un objet Routes vide que vous pouvez remplir avec des routes vers différents composants et NgModules.
+
+```
+$ ng generate module my-module --routing
+```
+## Refactoriser la configuration de routage dans un module de routage:
+
+```
+$ ng generate module app-routing --module app --flat
+```
+Après ces étapes, les fichiers devrait ressembler à ceci.
+##### src/app/app-routing.module.ts
+
+```
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes: Routes = [
+  { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule {}
+
+```
+
+##### src/app/app.module.ts
+
+```
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeroesModule } from './heroes/heroes.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HeroesModule,
+    AppRoutingModule
+  ],
+  declarations: [
+    AppComponent
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+```
+# Configuration de menu Heroes :
+
+Créez un HeroesModule avec un routage dans le dossier heroes et enregistrez-le avec le racine AppModule. C'est là que vous allez mettre en place la gestion des héros.
+
+```
+$ ng generate module heroes/heroes --module app --flat --routing
+```
+Assurez-vous que les fichiers suivants sont les memes commes suivant :
+## src/app/heroes/heroes.module.ts 
+
+`
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+
+import { HeroesRoutingModule } from './heroes-routing.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    HeroesRoutingModule
+  ],
+  declarations: [
+    HeroListComponent,
+    HeroDetailComponent
+  ]
+})
+export class HeroesModule {}
+`
+
+## src/app/heroes/heroes-routing.module.ts
+
+``
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+
+const heroesRoutes: Routes = [
+  { path: 'heroes',  component: HeroListComponent },
+  { path: 'hero/:id', component: HeroDetailComponent }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(heroesRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class HeroesRoutingModule { }
+``
+Avant de continuer la configuration des autres fichiers :
+
+## src/app/heroes/hero.ts
+
+``
+export class Hero {
+  id: number;
+  name: string;
+}
+``
+## src/app/heroes/hero.service.ts
+
+``
+import { Injectable } from '@angular/core';
+
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { Hero } from './hero';
+import { HEROES } from './mock-heroes';
+import { MessageService } from '../message.service';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class HeroService {
+
+  constructor(private messageService: MessageService) { }
+
+  getHeroes(): Observable<Hero[]> {
+    // TODO: send the message _after_ fetching the heroes
+    this.messageService.add('HeroService: fetched heroes');
+    return of(HEROES);
+  }
+
+  getHero(id: number | string) {
+    return this.getHeroes().pipe(
+      // (+) before `id` turns the string into a number
+      map((heroes: Hero[]) => heroes.find(hero => hero.id === +id))
+    );
+  }
+}
+``
+
+## src/app/heroes/mock-heroes.ts
+
+``
+import { Hero } from './hero';
+
+export const HEROES: Hero[] = [
+  { id: 1, name: 'Brice' },
+  { id: 2, name: 'Safaa' },
+  { id: 3, name: 'Amelie' },
+  { id: 4, name: 'Hamido' },
+  { id: 5, name: 'Fabien' },
+  { id: 6, name: 'Mostafa' }
+
+];
+
+``
+Maintenant on doit changer les fichiers de` Heroes/hero-list `et ` Heroes/hero-detail `, danc il faut juste avoire exactement meme code suivant :
+
+### 
