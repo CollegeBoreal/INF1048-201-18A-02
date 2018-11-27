@@ -17,7 +17,7 @@ $ npm install @angular/cli --global
 Alors, il faut creer votre projet ou vous voulez developper votre App ou bien votre Web ce qu'il faut faire :
 
 ```
-$ ng new b300XXXXX --style=scss --routing=true && cd $_
+$ ng new b300XXXXX --style=css --routing=true && cd $_
 ```
 La commande ng serve lance le serveur, surveille vos fichiers et reconstruit l'application
 
