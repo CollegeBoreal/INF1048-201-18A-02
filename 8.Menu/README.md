@@ -153,18 +153,11 @@ export const slideInAnimation =
   ]);
 
 ```
-## :two: Intégrez le routage à votre application:
 
-Cela crée un fichier séparé nommé my-module-routing.module.ts pour stocker les itinéraires du NgModule. Le fichier comprend un objet Routes vide que vous pouvez remplir avec des routes vers différents composants et NgModules.
-
-```
-$ ng generate module heroes/heroes --routing
-```
-
-## :three: Refactoriser la configuration de routage dans un module de routage:
+## :two: Refactoriser la configuration de routage dans un module de routage:
 
 ```
-$ ng generate heroes/heroes app-routing --module app --flat
+$ ng generate module app-routing --module app --flat
 ```
 
 :arrow_right: Après ces étapes, les fichiers devrait ressembler à ceci.
@@ -256,7 +249,7 @@ export class AppComponent {
 
 ```
 
-# :four: Configuration de menu Heroes :
+# :three: Configuration de menu Heroes :
 
 Créez un HeroesModule avec un routage dans le dossier heroes et enregistrez-le avec le racine AppModule. C'est là que vous allez mettre en place la gestion des héros.
 
