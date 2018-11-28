@@ -2,7 +2,7 @@
 
 Comme vous savez Angular vous aide à créer des applications modernes pour le Web dans votre mobile ou votre Laptop. Donc en general on l'utilise pour developper les sites Web
 
-=> Avant de commencer avec Anguler CLI on a besoin de :
+:arrow_right: Avant de commencer avec Anguler CLI on a besoin de :
 
 Node.js (v8 ou 10) et npm package manager 
 
@@ -44,7 +44,7 @@ Vous ouvrez votre projet avec ``` webStorm``` et vous devez changer le code en s
 
 :one:
 
-##### src/index.html
+#### src/index.html
 
 ```
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ Vous ouvrez votre projet avec ``` webStorm``` et vous devez changer le code en s
 ```
 :point_right: Avant qu'on face avec le reste de code vous devez creer des fichiers ```ts``` dans ```app``` :
 
-###### src/app/service.message.ts
+##### src/app/service.message.ts
 
 ```
 import { Injectable } from '@angular/core';
@@ -85,7 +85,7 @@ export class MessageService {
   }
 }
 ```
-###### src/app/selective-preloading-strategy.ts
+#### src/app/selective-preloading-strategy.ts
 
 ```
 import { Injectable } from '@angular/core';
@@ -315,7 +315,7 @@ const heroesRoutes: Routes = [
 })
 export class HeroesRoutingModule { }
 ```
-:point_right: Avant de continuer la configuration des autres fichiers :exclamation: :
+:point_right: Avant de continuer la configuration des autres fichiers, vous devez creer des fichiers ```ts``` dans ```heroes``` :exclamation: :
 
 #### src/app/heroes/hero.ts
 
@@ -376,7 +376,7 @@ export const HEROES: Hero[] = [
 ];
 
 ```
-Maintenant on doit changer les fichiers de` Heroes/hero-list `et ` Heroes/hero-detail `, danc il faut juste avoire exactement meme code suivant :
+:arrow_right: Maintenant on doit changer les fichiers de` Heroes/hero-list `et ` Heroes/hero-detail `, danc il faut juste avoire exactement meme code suivant :
 
 ## :one: hero-detail :
 
