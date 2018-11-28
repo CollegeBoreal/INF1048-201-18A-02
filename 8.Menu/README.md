@@ -1,5 +1,7 @@
 # Introduction:
 
+:information_desk_person:
+
 Comme vous savez Angular vous aide à créer des applications modernes pour le Web dans votre mobile ou votre Laptop. Donc en general on l'utilise pour developper les sites Web
 
 => Avant de commencer avec Anguler CLI on a besoin de :
@@ -8,16 +10,15 @@ Node.js (v8 ou 10) et npm package manager
 
 ## Pourquoi on utilise Angular CLI ?
 
-on l'utilise pour creer des projets, generer des applications et liberer le code.
-et on l'installe avec cette commande:
-
-Alors, il faut creer votre projet ou vous voulez developper votre App ou bien votre Web ce qu'il faut faire :
+Il est utilisé pour créer des projets, générer des applications et publier du code.
+et installez-le avec cette commande:
 
 ```
 $ ng new b300XXXXX --style=css --routing=true && cd $_
 ```
-La commande ng serve lance le serveur, surveille vos fichiers et reconstruit l'application
+Donc, vous devez créer votre projet ou vous voulez développer votre application ou votre site Web, que faire:
 
+:maple_leaf: La commande ng serve lance le serveur, surveille vos fichiers et reconstruit l'application
 Avant de lancer votre site vous devez etre dans ton projet qui est "b300XXXX"
 
 ```
@@ -25,15 +26,15 @@ $ cd b300....
 $ ng serve
 ```
 
-ouvrez votre navigateur sur http://localhost:4200/
+Ouvrez votre navigateur sur http://localhost:4200/
 
 Votre application vous accueille avec un message:
 ![Alt.tag](angu.png)
 
 
-Notre menu d'aujourdhui c est Heroes :
+Notre menu d'aujourdhui c'est Heroes :
 
-pic
+![Alt.tag](menu.png)
 
 On Commence !
 
@@ -41,7 +42,9 @@ On Commence !
 $ng generate component heroes/hero-list
 $ng generate component heroes/hero-detail
 ```
-Vous ouvres votre projet avec ``` webStorm``` et vous devez changer le code en suivant ces parties:
+Vous ouvrez votre projet avec ``` webStorm``` et vous devez changer le code en suivant ces parties:
+
+:one:
 
 ##### src/index.html
 
@@ -62,7 +65,7 @@ Vous ouvres votre projet avec ``` webStorm``` et vous devez changer le code en s
 
 </html>
 ```
-Avant qu'on face avec le reste de code vous devez creer des fichiers ```ts``` :
+:point_right: Avant qu'on face avec le reste de code vous devez creer des fichiers ```ts``` dans ```app``` :
 
 ###### src/app/service.message.ts
 
@@ -152,19 +155,22 @@ export const slideInAnimation =
   ]);
 
 ```
-## Intégrez le routage à votre application:
+## :two: Intégrez le routage à votre application:
 
 Cela crée un fichier séparé nommé my-module-routing.module.ts pour stocker les itinéraires du NgModule. Le fichier comprend un objet Routes vide que vous pouvez remplir avec des routes vers différents composants et NgModules.
 
 ```
 $ ng generate module my-module --routing
 ```
-## Refactoriser la configuration de routage dans un module de routage:
+
+## :three: Refactoriser la configuration de routage dans un module de routage:
 
 ```
 $ ng generate module app-routing --module app --flat
 ```
-Après ces étapes, les fichiers devrait ressembler à ceci.
+
+:arrow_right: Après ces étapes, les fichiers devrait ressembler à ceci.
+
 ##### src/app/app-routing.module.ts
 
 ```
@@ -218,16 +224,50 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 })
 export class AppModule { }
 ```
-## app.component.html ... nd son 
-# Configuration de menu Heroes :
+##### src/app/app.component.html 
+
+```
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { slideInAnimation } from './animations';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
+  animations: [ slideInAnimation ]
+})
+export class AppComponent {
+  getAnimationData(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
+}
+
+```
+#### src/app/app.component.html
+
+```
+<h1 class="title">Welcome to Our App</h1>
+<a routerLink="/superheroes" routerLinkActive="active">Heroes of the class</a>
+<br>
+<br>
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
+<router-outlet></router-outlet>
+
+```
+
+# :four: Configuration de menu Heroes :
 
 Créez un HeroesModule avec un routage dans le dossier heroes et enregistrez-le avec le racine AppModule. C'est là que vous allez mettre en place la gestion des héros.
 
 ```
 $ ng generate module heroes/heroes --module app --flat --routing
 ```
-Assurez-vous que les fichiers suivants sont les memes commes suivant :
-## src/app/heroes/heroes.module.ts 
+:exclamation: Assurez-vous que les fichiers suivants sont les memes commes suivant :exclamation:  :
+
+#### src/app/heroes/heroes.module.ts 
 
 ```
 import { NgModule } from '@angular/core';
@@ -253,7 +293,7 @@ import { HeroesRoutingModule } from './heroes-routing.module';
 export class HeroesModule {}
 ```
 
-## src/app/heroes/heroes-routing.module.ts
+#### src/app/heroes/heroes-routing.module.ts
 
 ```
 import { NgModule } from '@angular/core';
@@ -277,9 +317,9 @@ const heroesRoutes: Routes = [
 })
 export class HeroesRoutingModule { }
 ```
-Avant de continuer la configuration des autres fichiers :
+:point_right: Avant de continuer la configuration des autres fichiers :exclamation: :
 
-## src/app/heroes/hero.ts
+#### src/app/heroes/hero.ts
 
 ```
 export class Hero {
@@ -288,7 +328,7 @@ export class Hero {
 }
 ```
 
-## src/app/heroes/hero.service.ts
+#### src/app/heroes/hero.service.ts
 
 ```
 import { Injectable } from '@angular/core';
@@ -322,7 +362,7 @@ export class HeroService {
 }
 ```
 
-## src/app/heroes/mock-heroes.ts
+#### src/app/heroes/mock-heroes.ts
 
 ```
 import { Hero } from './hero';
@@ -340,4 +380,203 @@ export const HEROES: Hero[] = [
 ```
 Maintenant on doit changer les fichiers de` Heroes/hero-list `et ` Heroes/hero-detail `, danc il faut juste avoire exactement meme code suivant :
 
-### 
+## :one: hero-detail :
+
+#### src/app/heroes/hero-detail/hero-detail.component.ts
+```
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import {HeroService} from '../hero.service';
+import {Hero} from '../hero';
+import {Observable} from 'rxjs';
+
+@Component({
+  selector: 'app-hero-detail',
+  templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.css']
+})
+export class HeroDetailComponent implements OnInit {
+  private hero$: Observable<Hero>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: HeroService
+  ) {}
+  gotoHeroes(hero: Hero) {
+    let heroId = hero ? hero.id : null;
+    // Pass along the hero id if available
+    // so that the HeroList component can select that hero.
+    // Include a junk 'foo' property for fun.
+    this.router.navigate(['/heroes', { id: heroId, foo: 'foo' }]);
+  }
+  ngOnInit() {
+    let id = this.route.snapshot.paramMap.get('id');
+
+    this.hero$ = this.service.getHero(id);
+  }
+
+}
+
+```
+
+#### src/app/heroes/hero-detail/hero-detail.component.html
+
+```
+<h2>HEROES</h2>
+<div *ngIf="hero$ | async as hero">
+  <h3>"{{ hero.name }}"</h3>
+  <div>
+    <label>Id: </label>{{ hero.id }}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+  </div>
+  <p>
+    <button (click)="gotoHeroes(hero)">Back</button>
+  </p>
+</div>
+
+```
+
+## :two: hero-list :
+
+#### src/app/heroes/hero-list/hero-list.component.ts
+
+```
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { HeroService } from '../hero.service';
+import { Hero } from '../hero';
+
+@Component({
+  selector: 'app-hero-list',
+  templateUrl: './hero-list.component.html',
+  styleUrls: ['./hero-list.component.css']
+})
+export class HeroListComponent implements OnInit {
+  heroes$: Observable<Hero[]>;
+  selectedId: number;
+
+  constructor(
+    private service: HeroService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.heroes$ = this.route.paramMap.pipe(
+      switchMap(params => {
+        // (+) before `params.get()` turns the string into a number
+        this.selectedId = +params.get('id');
+        return this.service.getHeroes();
+      })
+    );
+  }
+}
+```
+#### src/app/heroes/hero-list/hero-list.component.html
+
+```
+<h2>HEROES</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes$ | async"
+      [class.selected]="hero.id === selectedId">
+    <a [routerLink]="['/hero', hero.id]">
+      <span class="badge">{{ hero.id }}</span>{{ hero.name }}
+    </a>
+  </li>
+</ul>
+
+<button routerLink="/sidekicks">Go to sidekicks</button>
+
+```
+#### src/app/heroes/hero-list/hero-list.component.css
+
+```
+
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.heroes li {
+  position: relative;
+  cursor: pointer;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.heroes a {
+  color: #888;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+.heroes a:hover {
+  color:#607D8B;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  font-family: Arial;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button.delete {
+  position: relative;
+  left: 194px;
+  top: -32px;
+  background-color: gray !important;
+  color: white;
+}
+
+.heroes li.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+.heroes li.selected:hover {
+  background-color: #BBD8DC;
+}
+
+```
+:star2: Et voila, vous devez simplement parcourir localhost: 4200 et vous devez avoir le résultat :star2:
