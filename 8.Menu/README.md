@@ -158,13 +158,13 @@ export const slideInAnimation =
 Cela crée un fichier séparé nommé my-module-routing.module.ts pour stocker les itinéraires du NgModule. Le fichier comprend un objet Routes vide que vous pouvez remplir avec des routes vers différents composants et NgModules.
 
 ```
-$ ng generate module my-module --routing
+$ ng generate module heroes/heroes --routing
 ```
 
 ## :three: Refactoriser la configuration de routage dans un module de routage:
 
 ```
-$ ng generate module app-routing --module app --flat
+$ ng generate heroes/heroes app-routing --module app --flat
 ```
 
 :arrow_right: Après ces étapes, les fichiers devrait ressembler à ceci.
