@@ -1,6 +1,4 @@
-# Introduction:
-
-:information_desk_person:
+# Introduction :information_desk_person: :
 
 Comme vous savez Angular vous aide à créer des applications modernes pour le Web dans votre mobile ou votre Laptop. Donc en general on l'utilise pour developper les sites Web
 
