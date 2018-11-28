@@ -222,7 +222,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 })
 export class AppModule { }
 ```
-##### src/app/app.component.html 
+##### src/app/app.component.ts
 
 ```
 import { Component } from '@angular/core';
