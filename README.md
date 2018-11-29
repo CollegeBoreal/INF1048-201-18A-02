@@ -35,6 +35,14 @@ Programmation et scripts - Automne 2018
 | [https://js.do/](https://js.do/)                                               | Tester Javascript                      |
 | [https://stackblitz.com/fork/angular](https://stackblitz.com/fork/angular)     | Tester Angular                         |
 
+## RxJS
+
+| Sites                                                                          |  Commentaires                          |
+|--------------------------------------------------------------------------------|:---------------------------------------|
+| [https://www.learnrxjs.io/](https://www.learnrxjs.io/)                         | Apprendre RxJS                         |
+| [http://reactivex.io/rxjs/manual](http://reactivex.io/rxjs/manual)             | Documentation RxJS                     |
+
+
 
 ## Chrome Debug
 
