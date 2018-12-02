@@ -14,7 +14,7 @@ et installez-le avec cette commande:
 ```
 $ ng new b300XXXXX --style=css --routing=true && cd $_
 ```
-Donc, vous devez créer votre projet ou vous voulez développer votre application ou votre site Web, que faire:
+Donc, vous devez créer votre projet où vous voulez développer votre application ou votre site Web, que faire:
 
 :maple_leaf: La commande ng serve lance le serveur, surveille vos fichiers et reconstruit l'application
 Avant de lancer votre site vous devez etre dans ton projet qui est "b300XXXX"
@@ -63,7 +63,7 @@ Vous ouvrez votre projet avec ``` webStorm``` et vous devez changer le code en s
 
 </html>
 ```
-:point_right: Avant qu'on face avec le reste de code vous devez creer des fichiers ```ts``` dans ```app``` :
+:point_right: Avant que nous continuons le reste du code, vous devez creer des fichiers ```ts``` dans ```app``` :
 
 ##### src/app/service.message.ts
 
@@ -251,7 +251,7 @@ export class AppComponent {
 
 # :three: Configuration de menu Heroes :
 
-Créez un HeroesModule avec un routage dans le dossier heroes et enregistrez-le avec le racine AppModule. C'est là que vous allez mettre en place la gestion des héros.
+Créez un HeroesModule avec un routage dans le dossier heroes et enregistrez-le avec la racine AppModule. C'est là que vous allez mettre en place la gestion des héros.
 
 ```
 $ ng generate module heroes/heroes --module app --flat --routing
@@ -369,7 +369,7 @@ export const HEROES: Hero[] = [
 ];
 
 ```
-:arrow_right: Maintenant on doit changer les fichiers de` Heroes/hero-list `et ` Heroes/hero-detail `, danc il faut juste avoire exactement meme code suivant :
+:arrow_right: Maintenant on doit changer les fichiers de` Heroes/hero-list `et ` Heroes/hero-detail `, donc il faut juste s'assurer d'avoir le code suivant :
 
 ## :one: hero-detail :
 
@@ -570,4 +570,4 @@ button.delete {
 }
 
 ```
-:star2: Et voila, vous devez simplement parcourir localhost: 4200 et vous devez avoir le résultat :star2:
+:star2: Et voila, vous devez simplement parcourir localhost: 4200 et vous devez avoir le résultat final :star2:
