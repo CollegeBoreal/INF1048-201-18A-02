@@ -35,6 +35,7 @@ Notre menu d'aujourdhui c'est Heroes :
 ![Alt.tag](menu.png)
 
 On Commence !
+Ouvrez une autre page terminal et laissez le ng serve rouler.
 
 ```
 $ng generate component heroes/hero-list
