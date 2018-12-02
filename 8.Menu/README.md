@@ -572,7 +572,8 @@ button.delete {
 
 ```
 :star2: Et voila, vous devez simplement parcourir localhost: 4200 et vous devez avoir le résultat final :star2:
-
+---
+# GUARDS
 CanActivate: nécessitant une authentification
 La protection CanActivate est l'outil permettant de gérer l'accès uniquement aux utilisateurs authentifiés ou aux utilisateurs dotés d'un rôle spécifique. Ceci est la commande a faire pour generer le CanActivate (auth)
 ```
