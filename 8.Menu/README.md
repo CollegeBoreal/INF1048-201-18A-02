@@ -572,3 +572,23 @@ button.delete {
 
 ```
 :star2: Et voila, vous devez simplement parcourir localhost: 4200 et vous devez avoir le résultat final :star2:
+
+CanActivate: nécessitant une authentification
+La protection CanActivate est l'outil permettant de gérer l'accès uniquement aux utilisateurs authentifiés ou aux utilisateurs dotés d'un rôle spécifique. Ceci est la commande a faire pour generer le CanActivate (auth)
+```
+$ ng generate guard auth/auth
+```
+CanActivateChild: 
+Ce guard est similaire à CanActivate, mais celui-ci s'exécute avant l'activation de tout itinéraire enfant. Pour le CanActivateChild, il n'y a pas de commande specifique lorsque le CanActivate à déjà été implémenté, il faut seulement ajouter le CanActivateChild dans le ```auth.guard.ts``` dans la partie "import" et dans la partie "export class".
+
+CanDeactivate: se charge des changements non sauvegardés 
+"Cancel and Save". Le CanDeactivate décide si un itinéraire peut être désactivé. Si tous les guards retournent vrais, la navigation continuera. Si un guard retourne faux, la navigation sera annulée. Ceci donne à l'utilisateur une protection contre les modifications non enregistrées. Voici la commande pour générer le CanDeactivate
+```
+$ ng generate guard can-deactivate
+```
+
+Resolve: pré-récuperer les données du composant
+Ce guard sert à ce que l'utilisateur ne voit pas un composant vierge en attendant les données qui sont renvoyés par le serveur. Par exemple, pour notre composant Hero, voici la commande qu'il faudrait générer pour avoir le guard Resolve:
+```
+$ ng generate service heroes/hero-detail-resolver
+```
