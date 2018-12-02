@@ -257,7 +257,7 @@ Créez un HeroesModule avec un routage dans le dossier heroes et enregistrez-le 
 ```
 $ ng generate module heroes/heroes --module app --flat --routing
 ```
-:exclamation: Assurez-vous que les fichiers suivants sont les memes commes suivant :exclamation:  :
+:exclamation: Assurez-vous que les fichiers suivants sont les mêmes que ceux-ci :exclamation:  :
 
 #### src/app/heroes/heroes.module.ts 
 
