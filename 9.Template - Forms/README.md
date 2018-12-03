@@ -29,3 +29,7 @@ app le nommer app.module.ts
 ```ng g component site\accueil
 ng g component site\galerie
 ng g component site\contact```
+
+##  Mise en place des routes
+
+1 –Indiquer au module principal que nous utiliserons des routes
