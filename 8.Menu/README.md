@@ -66,7 +66,7 @@ Vous ouvrez votre projet avec ``` webStorm``` et vous devez changer le code en s
 ```
 :point_right: Avant que nous continuons le reste du code, vous devez creer des fichiers ```ts``` dans ```app``` :
 
-##### src/app/service.message.ts
+##### src/app/message.service.ts
 
 ```
 import { Injectable } from '@angular/core';
