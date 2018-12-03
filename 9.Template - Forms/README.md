@@ -1,6 +1,6 @@
 ## 🔎TEMPLATE ET FORMS
 
-## CREATION D UN PROJET(TEMPLATE ET FORMS)
+## CREATION D'UN PROJET(TEMPLATE ET FORMS)
 
 ## 1-taper dans la console git bash: 
 
