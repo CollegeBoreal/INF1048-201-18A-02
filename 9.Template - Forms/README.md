@@ -33,3 +33,11 @@ ng g component site\contact ```
 ##  Mise en place des routes
 
 1 –Indiquer au module principal que nous utiliserons des routes
+Lorsque le module Root charge les sous modules il prend en compte les routes indiquees. 
+
+
+ formulaire(Forms)
+1 – Creer un nouveau composant : ng g component src\noms\form
+• Ce composant est un formulaire pour rechercher des noms
+• Angular CLI a ajouté ce composant au module noms.module.ts
+2 – Ajouter le formulaire au template noms.component.html
