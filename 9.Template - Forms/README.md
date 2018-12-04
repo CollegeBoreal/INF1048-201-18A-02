@@ -25,7 +25,7 @@ app le nommer app.module.ts
 
 
 ## Ajouter les composants qui serviront à afficher chacune des pages
-
+Exemple
 ng g component site\accueil
 ng g component site\galerie
 ng g component site\contact 
