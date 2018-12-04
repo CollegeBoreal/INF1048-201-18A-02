@@ -26,9 +26,9 @@ app le nommer app.module.ts
 
 ## Ajouter les composants qui serviront à afficher chacune des pages
 
-```ng g component site\accueil
+ng g component site\accueil
 ng g component site\galerie
-ng g component site\contact ```
+ng g component site\contact 
 
 ##  Mise en place des routes
 
@@ -45,4 +45,14 @@ Reactive Forms (or Model Driven)
 • Angular CLI a ajouté ce composant au module noms.module.ts
 2 – Ajouter le formulaire au template noms.component.html
 
-## FORMS
+## 🔎FORMS
+## 📍Introduction aux formes angulaires 
+La gestion de la saisie par l'utilisateur à l'aide de formulaires est la pierre angulaire de nombreuses applications courantes. Les applications utilisent des formulaires pour permettre aux utilisateurs de se connecter, de mettre à jour un profil, d'entrer des informations sensibles et d'effectuer de nombreuses autres tâches de saisie de données. 
+
+Angular propose deux approches différentes pour traiter les données saisies par l'utilisateur à l'aide de formulaires : réactive et pilotée par des modèles. Les deux saisissent les événements d'entrée de l'utilisateur à partir de la vue, valident l'entrée de l'utilisateur, créent un modèle de formulaire et un modèle de données à mettre à jour, et fournissent un moyen de suivre les changements.
+Reactive and template-driven forms pilotés par modèle traitent et gèrent les données de formulaire différemment. Chacun offre des avantages différents. 
+
+En général :
+
+* Les réactives forms sont plus robustes : elles sont plus évolutives, réutilisables et testables. Si les formulaires sont un élément clé de votre demande, ou si vous utilisez déjà des modèles réactifs pour construire votre demande, utilisez des formulaires réactifs.
+* Les Template-driven forms sont utiles pour ajouter un formulaire simple à une application, tel qu'un formulaire d'inscription à une liste de diffusion. Ils sont faciles à ajouter à une application, mais ils n'évoluent pas aussi bien que les formulaires réactifs. Si vous avez des exigences et une logique de formulaire très élémentaires qui peuvent être gérées uniquement dans le modèle, utilisez des formulaires pilotés par modèle.
