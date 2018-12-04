@@ -105,8 +105,8 @@ Utilisez le constructeur de FormControl pour définir sa valeur initiale, qui da
 ## Etape 3 : Enregistrer le contrôle dans le template
 Après avoir créé le contrôle dans la classe de composants, vous devez l'associer à un élément de contrôle de formulaire dans le modèle. Mettez à jour le modèle avec le contrôle de formulaire à l'aide de la liaison formControl fournie par FormControlDirective incluse dans ReactiveFormsModule. 
 
-```src/app/name-editor/name-editor/name-editor. component. html
-<label>
+src/app/name-editor/name-editor/name-editor. component. html
+```<label>
   Name:
   <input type="text" [formControl]="name">
 </label>
