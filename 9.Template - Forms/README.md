@@ -187,7 +187,7 @@ content_copy
     Last Name:
     <input type="text" formControlName="lastName">
   </label>
-
+ 
 </form>
 ```
 Notez que, tout comme un groupe de formulaires contient un groupe de contrôles, le formulaire profil FormGroup est lié à l'élément de formulaire avec la directive FormGroup, créant une couche de communication entre le modèle et le formulaire contenant les entrées. L'entrée formControlName fournie par la directive FormControlName lie chaque entrée individuelle au contrôle de formulaire défini dans FormGroup. Les contrôles de formulaire communiquent avec leurs éléments respectifs. Ils communiquent également les modifications apportées à l'instance de groupe de formulaires, qui fournit la source de vérité pour la valeur du modèle.
