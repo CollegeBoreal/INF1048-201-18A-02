@@ -105,4 +105,33 @@ Après avoir créé le contrôle dans la classe de composants, vous devez l'asso
   <input type="text" [formControl]="name">
 </label>
 ```
-sdfg
+## Affichage du composant
+Le contrôle de formulaire affecté au nom est affiché lorsque le composant est ajouté à un modèle. 
+
+src/app/app/app. component. html (éditeur de nom)
+```<app-name-editor></app-name-editor>```
+## Gestion des valeurs de contrôle
+Les formulaires réactifs vous donnent accès à l'état et à la valeur du contrôle de formulaire à un moment donné. Vous pouvez manipuler l'état et la valeur actuels via la classe de composants ou le modèle de composant. Les exemples suivants affichent la valeur de l'instance de contrôle de formulaire et la modifient.
+## Affichage d'une valeur de contrôle de formulaire
+Vous pouvez afficher la valeur de ces façons : 
+
+Grâce à valueChanges observable où vous pouvez écouter :
+* les changements de la valeur du formulaire dans le modèle en utilisant AsyncPipe ou dans la classe de composants en utilisant la méthode subscribe(). 
+* Avec la propriété value. qui vous donne un instantané de la valeur courante.
+L'exemple suivant vous montre comment afficher la valeur actuelle à l'aide de l'interpolation dans le modèle.
+
+```src/app/name-editor/name-editor.component.html (control value)
+content_copy
+<p>
+  Value: {{ name.value }}
+</p>
+```
+## Remplacement d'une valeur de contrôle de formulaire
+
+src/app/name-editor/name-editor.component.ts (update value)
+content_copy
+```updateName() {
+  this.name.setValue('Nancy');
+}
+```
+jhg
