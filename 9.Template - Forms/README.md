@@ -134,4 +134,19 @@ content_copy
   this.name.setValue('Nancy');
 }
 ```
-jhg
+src/app/name-editor/name-editor.component.html (update value)
+content_copy
+```<p>
+  <button (click)="updateName()">Update Name</button>
+</p>
+```
+Le modèle de formulaire est la source de vérité pour le contrôle, donc lorsque vous cliquez sur le bouton, la valeur de l'entrée est modifiée dans la classe de composants, remplaçant sa valeur actuelle.
+## Regroupement des contrôles de formulaire
+Tout comme une instance de contrôle de formulaire vous donne le contrôle sur un champ de saisie unique, une instance de groupe de formulaires suit l'état de formulaire d'un groupe d'instances de contrôle de formulaire (par exemple, un formulaire). Chaque contrôle d'une instance de groupe de formulaires est suivi par son nom lors de la création du groupe de formulaires. L'exemple suivant montre comment gérer plusieurs instances de contrôle de formulaires dans un même groupe.
+Générez un composant ProfileEditor et importez les classes FormGroup et FormControl depuis le package @angular/forms.
+
+```ng generate component ProfileEditor```
+src/app/profile-editor/profile-editor.component.ts (imports)
+content_copy
+```import { FormGroup, FormControl } from '@angular/forms';```
+
