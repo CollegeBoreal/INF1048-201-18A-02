@@ -150,3 +150,43 @@ src/app/profile-editor/profile-editor.component.ts (imports)
 content_copy
 ```import { FormGroup, FormControl } from '@angular/forms';```
 
+## Etape 1 : Créer une instance FormGroup
+Créez une propriété dans la classe de composants nommée profileForm et définissez la propriété à une nouvelle instance de groupe de formulaires. Pour initialiser le groupe de formulaires, fournissez au constructeur un objet de clés nommées mappées à leur contrôle. 
+
+Pour le formulaire de profil, ajoutez deux instances de contrôle de formulaire avec les noms prénom et nom.
+src/app/profile-editor/profile-editor.component.ts (form group)
+content_copy
+```import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+ 
+@Component({
+  selector: 'app-profile-editor',
+  templateUrl: './profile-editor.component.html',
+  styleUrls: ['./profile-editor.component.css']
+})
+export class ProfileEditorComponent {
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  });
+}
+```
+Les contrôles de formulaire individuels sont maintenant regroupés au sein d'un groupe. Une instance de FormGroup fournit sa valeur de modèle sous la forme d'un objet réduit par rapport aux valeurs de chaque contrôle du groupe. Une instance de groupe de formulaires a les mêmes propriétés (telles que valeur et intact) et méthodes (telles que setValue()) qu'une instance de contrôle de formulaire.
+## Etape 2 : Associer le modèle FormGroup et la vue
+Un groupe de formulaires suit l'état et les modifications de chacun de ses contrôles, donc si l'un des contrôles change, le contrôle parent émet également un nouveau changement d'état ou de valeur. Le modèle du groupe est maintenu par ses membres. Après avoir défini le modèle, vous devez mettre à jour le modèle pour refléter le modèle dans la vue.
+src/app/profile-editor/profile-editor.component.html (template form group)
+content_copy
+```<form [formGroup]="profileForm">
+  
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+</form>
+```
