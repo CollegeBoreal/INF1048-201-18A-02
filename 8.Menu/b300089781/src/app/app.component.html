@@ -1,0 +1,8 @@
+<h1 class="title">Welcome to Our App</h1>
+<a routerLink="/superheroes" routerLinkActive="active">Heroes of the class</a>
+<br>
+<br>
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
+<router-outlet></router-outlet>

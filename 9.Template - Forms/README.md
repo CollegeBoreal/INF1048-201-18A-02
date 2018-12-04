@@ -1,5 +1,8 @@
 ## 🔎TEMPLATE ET FORMS
 
+https://angular.io/guide/displaying-data
+
+
 ## CREATION D'UN PROJET(TEMPLATE ET FORMS)
 
 ## 1-taper dans la console git bash: 
@@ -26,9 +29,9 @@ app le nommer app.module.ts
 
 ## Ajouter les composants qui serviront à afficher chacune des pages
 Exemple
-ng g component site\accueil
-ng g component site\galerie
-ng g component site\contact 
+ng g component 
+ng g component 
+ng g component 
 
 ##  Mise en place des routes
 
@@ -61,6 +64,9 @@ En général :
 Les formulaires réactifs utilisent une approche explicite et immuable pour gérer l'état d'un formulaire à un moment donné. Chaque modification de l'état du formulaire renvoie un nouvel état, qui maintient l'intégrité du modèle entre les modifications. Les formulaires réactifs sont construits autour de flux observables, où les entrées et les valeurs des formulaires sont fournies sous forme de flux de valeurs d'entrée, accessibles de manière synchrone.
 Les formulaires réactifs constituent également un moyen simple d'effectuer des tests, car vous avez l'assurance que vos données sont cohérentes et prévisibles lorsqu'elles vous sont demandées. Tous les consommateurs des flux ont accès pour manipuler ces données en toute sécurité.
 ## ✨Pour commencer
+
+*lien https://angular.io/guide/reactive-forms*
+
 ## Etape 1 : Enregistrement du module des formulaires réactifs
 Pour utiliser des formulaires réactifs, importez ReactiveFormsModule depuis le package @angular/forms et ajoutez-le au tableau d'importation de votre NgModule.
 src/app/app.module.ts (excerpt)
@@ -99,8 +105,8 @@ Utilisez le constructeur de FormControl pour définir sa valeur initiale, qui da
 ## Etape 3 : Enregistrer le contrôle dans le template
 Après avoir créé le contrôle dans la classe de composants, vous devez l'associer à un élément de contrôle de formulaire dans le modèle. Mettez à jour le modèle avec le contrôle de formulaire à l'aide de la liaison formControl fournie par FormControlDirective incluse dans ReactiveFormsModule. 
 
-```src/app/name-editor/name-editor/name-editor. component. html
-<label>
+src/app/name-editor/name-editor/name-editor. component. html
+```<label>
   Name:
   <input type="text" [formControl]="name">
 </label>
