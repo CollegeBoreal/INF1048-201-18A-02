@@ -79,3 +79,30 @@ export class AppModule { }
 ## Etape 2 : Génération et importation d'un nouveau contrôle de formulaire
 Générez un composant pour le contrôle.
 ```ng generate component NameEditor```
+La classe FormControl est l'élément de base pour l'utilisation de formes réactives. Pour enregistrer un seul contrôle de formulaire, importez la classe FormControl dans votre composant et créez une nouvelle instance du contrôle de formulaire à enregistrer comme propriété de classe.
+
+src/app/name-editor/name-editor.component.ts
+content_copy
+```import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'app-name-editor',
+  templateUrl: './name-editor.component.html',
+  styleUrls: ['./name-editor.component.css']
+})
+export class NameEditorComponent {
+  name = new FormControl('');
+}
+```
+Utilisez le constructeur de FormControl pour définir sa valeur initiale, qui dans ce cas est une chaîne vide. En créant ces contrôles dans votre classe de composants, vous obtenez un accès immédiat pour écouter, mettre à jour et valider l'état de la saisie du formulaire.
+## Etape 3 : Enregistrer le contrôle dans le template
+Après avoir créé le contrôle dans la classe de composants, vous devez l'associer à un élément de contrôle de formulaire dans le modèle. Mettez à jour le modèle avec le contrôle de formulaire à l'aide de la liaison formControl fournie par FormControlDirective incluse dans ReactiveFormsModule. 
+
+```src/app/name-editor/name-editor/name-editor. component. html
+<label>
+  Name:
+  <input type="text" [formControl]="name">
+</label>
+```
+sdfg
