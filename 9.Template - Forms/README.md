@@ -36,6 +36,8 @@ ng g component site\contact ```
 Lorsque le module Root charge les sous modules il prend en compte les routes indiquees. 
 
 
+Reactive Forms (or Model Driven)
+
  formulaire(Forms)
 1 – Creer un nouveau composant : ng g component src\noms\form
 • Ce composant est un formulaire pour rechercher des noms
