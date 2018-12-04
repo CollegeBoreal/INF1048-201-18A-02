@@ -1,4 +1,6 @@
 ## 🔎TEMPLATE ET FORMS
+https://angular.io/guide/displaying-data
+
 
 ## CREATION D'UN PROJET(TEMPLATE ET FORMS)
 
