@@ -147,21 +147,28 @@ content_copy
 </p>
 ```
 Le modèle de formulaire est la source de vérité pour le contrôle, donc lorsque vous cliquez sur le bouton, la valeur de l'entrée est modifiée dans la classe de composants, remplaçant sa valeur actuelle.
-## Regroupement des contrôles de formulaire
+## 👓👓Grouping form controls
 Tout comme une instance de contrôle de formulaire vous donne le contrôle sur un champ de saisie unique, une instance de groupe de formulaires suit l'état de formulaire d'un groupe d'instances de contrôle de formulaire (par exemple, un formulaire). Chaque contrôle d'une instance de groupe de formulaires est suivi par son nom lors de la création du groupe de formulaires. L'exemple suivant montre comment gérer plusieurs instances de contrôle de formulaires dans un même groupe.
 Générez un composant ProfileEditor et importez les classes FormGroup et FormControl depuis le package @angular/forms.
 
+
 ```ng generate component ProfileEditor```
-src/app/profile-editor/profile-editor.component.ts (imports)
+
+* src/app/profile-editor/profile-editor.component.ts (imports)
 content_copy
+
 ```import { FormGroup, FormControl } from '@angular/forms';```
 
-## Etape 1 : Créer une instance FormGroup
+
+## 👓Step 1: Creating a FormGroup instance
+
 Créez une propriété dans la classe de composants nommée profileForm et définissez la propriété à une nouvelle instance de groupe de formulaires. Pour initialiser le groupe de formulaires, fournissez au constructeur un objet de clés nommées mappées à leur contrôle. 
 
 Pour le formulaire de profil, ajoutez deux instances de contrôle de formulaire avec les noms prénom et nom.
-src/app/profile-editor/profile-editor.component.ts (form group)
+
+* src/app/profile-editor/profile-editor.component.ts (form group)
 content_copy
+
 ```import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
  
@@ -177,11 +184,16 @@ export class ProfileEditorComponent {
   });
 }
 ```
+
 Les contrôles de formulaire individuels sont maintenant regroupés au sein d'un groupe. Une instance de FormGroup fournit sa valeur de modèle sous la forme d'un objet réduit par rapport aux valeurs de chaque contrôle du groupe. Une instance de groupe de formulaires a les mêmes propriétés (telles que valeur et intact) et méthodes (telles que setValue()) qu'une instance de contrôle de formulaire.
-## Etape 2 : Associer le modèle FormGroup et la vue
+
+## 👓Step 2: Associating the FormGroup model and view
+
 Un groupe de formulaires suit l'état et les modifications de chacun de ses contrôles, donc si l'un des contrôles change, le contrôle parent émet également un nouveau changement d'état ou de valeur. Le modèle du groupe est maintenu par ses membres. Après avoir défini le modèle, vous devez mettre à jour le modèle pour refléter le modèle dans la vue.
-src/app/profile-editor/profile-editor.component.html (template form group)
+
+* src/app/profile-editor/profile-editor.component.html (template form group)
 content_copy
+
 ```<form [formGroup]="profileForm">
   
   <label>
@@ -196,33 +208,45 @@ content_copy
  
 </form>
 ```
+
 Notez que, tout comme un groupe de formulaires contient un groupe de contrôles, le formulaire profil FormGroup est lié à l'élément de formulaire avec la directive FormGroup, créant une couche de communication entre le modèle et le formulaire contenant les entrées. L'entrée formControlName fournie par la directive FormControlName lie chaque entrée individuelle au contrôle de formulaire défini dans FormGroup. Les contrôles de formulaire communiquent avec leurs éléments respectifs. Ils communiquent également les modifications apportées à l'instance de groupe de formulaires, qui fournit la source de vérité pour la valeur du modèle.
 
+## 👓Saving form data
 Ajoutez un écouteur d'événement ngSubmit à la balise formulaire avec la méthode de rappel onSubmit().
-src/app/profile-editor/profile-editor.component.html (submit event)
+
+* src/app/profile-editor/profile-editor.component.html (submit event)
 content_copy
 
 ```<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">```
+
 La méthode onSubmit() du composant ProfileEditor capture la valeur actuelle de profileForm. Utilisez EventEmitter pour garder le formulaire encapsulé et pour fournir la valeur du formulaire en dehors du composant. L'exemple suivant utilise console. warn pour enregistrer un message sur la console du navigateur.
-src/app/profile-editor/profile-editor.component.ts (submit method)
+
+* src/app/profile-editor/profile-editor.component.ts (submit method)
 content_copy
+
 ```onSubmit() {
   // TODO: Use EventEmitter with form value
   console.warn(this.profileForm.value);
 }
 ```
+
 L'événement submit est émis par la balise form en utilisant l'événement DOM natif. Vous déclenchez l'événement en cliquant sur un bouton de type submit. Cela permet à l'utilisateur d'appuyer sur la touche Entrée pour soumettre le formulaire rempli. 
 
 Utilisez un élément de bouton pour ajouter un bouton au bas du formulaire afin de déclencher la soumission du formulaire.
-src/app/profile-editor/profile-editor.component.html (submit button)
+
+* src/app/profile-editor/profile-editor.component.html (submit button)
 content_copy
+
 ```<button type="submit" [disabled]="!profileForm.valid">Submit</button>```
-## Displaying the component
+
+## 👓Displaying the component
 Pour afficher le composant ProfileEditor qui contient le formulaire, ajoutez-le à un modèle de composant.
-src/app/app.component.html (profile editor)
+
+* src/app/app.component.html (profile editor)
 content_copy
+
 ```<app-profile-editor></app-profile-editor>```
 
 ProfileEditor vous permet de gérer les instances de contrôle de formulaire pour les contrôles prénom et nom dans l'instance du groupe de formulaires.
-![Alt.tag]
+![Alt.tag](profile-editor-1.png)
 
