@@ -255,3 +255,60 @@ ProfileEditor vous permet de gérer les instances de contrôle de formulaire pou
 Lors de la construction de formulaires complexes, il est plus facile de gérer les différents domaines d'information dans des sections plus petites, et certains groupes d'information tombent naturellement dans le même groupe. L'utilisation d'une instance de groupe de formulaires imbriqués vous permet de diviser les grands groupes de formulaires en groupes plus petits et plus faciles à gérer.
 
 ## Step 1: Creating a nested group
+Une adresse est un bon exemple d'information qui peut être regroupée. Les groupes de formulaires peuvent accepter à la fois le contrôle de formulaire et les instances de groupe de formulaires comme enfants. La composition de modèles de formulaires complexes est ainsi plus facile à gérer et à regrouper de manière logique. Pour créer un groupe imbriqué dans profileForm, ajoutez un élément d'adresse imbriqué à l'instance du groupe de formulaires.
+
+* src/app/profile-editor/profile-editor.component.ts (nested form group)
+content_copy
+```
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'app-profile-editor',
+  templateUrl: './profile-editor.component.html',
+  styleUrls: ['./profile-editor.component.css']
+})
+export class ProfileEditorComponent {
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl('')
+    })
+  });
+}
+```
+## Step 2: Grouping the nested form in the template
+Ajoutez le groupe de formulaires d'adresses contenant les champs prénom et nom dans le modèle ProfileEditor.
+
+* src/app/profile-editor/profile-editor.component.html (template nested form group)
+content_copy
+```
+<div formGroupName="address">
+  <h3>Address</h3>
+
+  <label>
+    Street:
+    <input type="text" formControlName="street">
+  </label>
+
+  <label>
+    City:
+    <input type="text" formControlName="city">
+  </label>
+  
+  <label>
+    State:
+    <input type="text" formControlName="state">
+  </label>
+
+  <label>
+    Zip Code:
+    <input type="text" formControlName="zip">
+  </label>
+</div>
+```
+![Alt.tag](potoo.png)
