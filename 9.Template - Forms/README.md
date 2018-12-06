@@ -392,7 +392,7 @@ content_copy
   </label>
 </div>
 ```
-![Alt.tag](past.png)
+![Alt_tag](photo.png)
 
 ## Partial model updates
 
