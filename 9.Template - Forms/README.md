@@ -70,6 +70,24 @@ Une propriété d'élément entre crochets identifie la propriété cible. La pr
       
 <img [src]="heroImageUrl">
 
+## Class binding
+You can add and remove CSS class names from an element's class attribute with a class binding.
+Class binding syntax resembles property binding. Instead of an element property between brackets, start with the prefix class, optionally followed by a dot (.) and the name of a CSS class: [class.class-name].
+The following examples show how to add and remove the application's "special" class with class bindings. Here's how to set the attribute without binding:
+src/app/app.component.html
+      
+<!-- standard class attribute setting  -->
+<div class="bad curly special">Bad curly special</div>
+    
+You can replace that with a binding to a string of the desired class names; this is an all-or-nothing, replacement binding.
+src/app/app.component.html
+      
+<!-- reset/override all class names with a binding  -->
+<div class="bad curly special"
+     [class]="badCurly">Bad curly</div>
+
+
+
 
 ## EVENT BINDING
 Les directives de liaison(binding directive) que vous avez rencontrées jusqu'ici transfèrent les données dans un sens: d'un composant à un élément.
