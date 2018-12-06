@@ -248,5 +248,10 @@ content_copy
 ```<app-profile-editor></app-profile-editor>```
 
 ProfileEditor vous permet de gérer les instances de contrôle de formulaire pour les contrôles prénom et nom dans l'instance du groupe de formulaires.
-![Alt.tag](photo.png)
+![Alt.tag](https://angular.io/generated/images/guide/reactive-forms/profile-editor-1.png0
 
+### ♦Creating nested form groups
+
+Lors de la construction de formulaires complexes, il est plus facile de gérer les différents domaines d'information dans des sections plus petites, et certains groupes d'information tombent naturellement dans le même groupe. L'utilisation d'une instance de groupe de formulaires imbriqués vous permet de diviser les grands groupes de formulaires en groupes plus petits et plus faciles à gérer.
+
+## Step 1: Creating a nested group
