@@ -248,5 +248,5 @@ content_copy
 ```<app-profile-editor></app-profile-editor>```
 
 ProfileEditor vous permet de gérer les instances de contrôle de formulaire pour les contrôles prénom et nom dans l'instance du groupe de formulaires.
-![Alt.tag](profile-editor-1.png)
+![Alt.tag](menu.png)
 
