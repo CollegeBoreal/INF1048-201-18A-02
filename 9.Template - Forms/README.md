@@ -30,8 +30,77 @@ app le nommer app.module.ts
 ## Ajouter les composants qui serviront à afficher chacune des pages
 Exemple
 ng g component 
-ng g component 
-ng g component 
+
+## Interpolation c est quoi exactement ? {{ }} for interpolation.
+C'est un mécanisme qui va, analyser les templates pour retrouver vos {{interpolations}}, afin de placer des changement sur les propriétés de votre component qui sont liées par leur noms...
+
+En gros elle Affiche des donner dans le template qui eux meme(les donnees) sont afficher dans la classe des composent.
+En utilisant angular elle va afficher une proprieter de title par INTERPOLATION
+
+Dans le fichier template app.compnent.html ex(<h1> {{ title}} </h1>)
+
+L'interpolation est une fonctionnalité tres utile pour afficher une donnée et la synchroniser en permanence avec le modèle.
+Comment sa marche? En mettant les crocher double autour d une expression( c a dire une proprieter de composant ou encore des equation maths) TEMPLATE.
+
+Le text entre les accolade est souvent le nom du proprieter de composant.Angular remplace ce nom par la valeur string de la proprieter de composant qui correpond.
+
+## Template-expressions : src/app/app.component.html
+<h3>
+  {{title}}
+  <img src="{{heroImageUrl}}" style="height:30px">
+</h3>
+
+le texte entre les accolades est une expression de modèle que Angular évalue et ensuite convertit en chaîne.
+Une expression de modèle produit une valeur. Angular exécute l'expression et l'assigne à une propriété d'une cible de liaison. la cible peut être un élément HTML, un composant ou une directive.
+
+Les accolades d'interpolation entre {{1 + 1}} entourent l'expression de modèle 1 + 1. Dans la section de liaison de propriété ci-dessous, une expression de modèle apparaît entre guillemets à la droite du symbole =, comme dans [propriété] = "expression".
+
+A template expression ne devrait changer aucun etat application  autre que la valeur de la cible 
+
+## template-statements :
+Une déclaration de modèle répond à un événement déclenché par une cible de liaison, telle qu'un élément, un composant ou une directive. Vous verrez des instructions de modèle dans la section de liaison d'événement, apparaissant entre guillemets à la droite du symbole =, comme dans (événement) = "instruction".
+
+src/app/app.component.html
+content_copy<button (click)="deleteHero()">Delete hero</button>
+
+## Binding-targets 
+La cible d'une liaison de données est quelque chose dans le DOM. Selon le type de liaison, la cible peut être une propriété (élément | composant | directive), un événement (élément | composant | directive) ou (rarement) un nom d'attribut.
+
+Une propriété d'élément entre crochets identifie la propriété cible. La propriété target dans le code suivant est la propriété src de l'élément image. src/app/app.component.html
+      
+<img [src]="heroImageUrl">
+
+
+## EVENT BINDING
+Les directives de liaison(binding directive) que vous avez rencontrées jusqu'ici transfèrent les données dans un sens: d'un composant à un élément.
+
+Les utilisateurs ne se contentent pas de regarder l'écran. Ils entrent du texte dans les zones de saisie. Ils choisissent des éléments dans les listes. Ils cliquent sur des boutons. De telles actions de l'utilisateur peuvent entraîner un flux de données dans le sens opposé: d'un élément à un composant.
+
+Le seul moyen de connaître l'action d'un utilisateur est d'écouter certains événements tels que les frappes au clavier, les mouvements de la souris, les clics et les contacts. Vous déclarez votre intérêt pour les actions de l'utilisateur via la liaison d'événement angulaire.
+
+La syntaxe de liaison d'événement comprend un nom d'événement cible entre parenthèses à gauche d'un signe égal et une instruction de modèle entre guillemets à droite. La liaison d'événement suivante écoute les événements de clic du bouton, appelant la méthode onSave () du composant à chaque clic: 
+src/app/app.component.html
+      
+<button (click)="onSave()">Save</button>
+
+
+## Built-in-directives: * for structural directives.
+
+La directive ngIf(condition) est utilisée lorsque vous souhaitez afficher ou masquer un élément en fonction d'une condition. La condition est déterminée par le résultat de l'expression que vous passez dans la directive.
+A savoir :*Ngif= n oublier pas l Asterix devant le ngif
+
+NgFOR(boucle) :C est une directive structurelle ngFor permet de boucler sur un array et d'injecter les éléments dans le DOM.    
+src/app/app.component.html
+<div *ngFor="let hero of heroes">{{hero.name}}</div>
+
+
+
+
+
+
+
+
+
 
 ##  Mise en place des routes
 
