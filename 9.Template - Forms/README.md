@@ -312,3 +312,145 @@ content_copy
 </div>
 ```
 ![Alt.tag](past.png)
+
+## Partial model updates
+
+* Patching the model value
+
+Dans ProfileEditorComponent, utilisez la méthode updateProfile avec l'exemple ci-dessous pour mettre à jour le prénom et l'adresse de l'utilisateur.
+
+* src/app/profile-editor/profile-editor.component.ts (patch value)
+content_copy
+```
+updateProfile() {
+  this.profileForm.patchValue({
+    firstName: 'Nancy',
+    address: {
+      street: '123 Drew Street'
+    }
+  });
+}
+Simulate an update by adding a button to the template to update the user profile on demand.
+
+src/app/profile-editor/profile-editor.component.html (update value)
+content_copy
+<p>
+  <button (click)="updateProfile()">Update Profile</button>
+</p>
+```
+
+### 🔎Generating form controls with FormBuilder
+Le service FormBuilder fournit des méthodes pratiques pour générer des contrôles. 
+
+## Step 1: Importing the FormBuilder class
+Import the FormBuilder class from the @angular/forms package.
+
+* src/app/profile-editor/profile-editor.component.ts (import)
+
+content_copy
+
+```import { FormBuilder } from '@angular/forms';```
+
+## Step 2: Injecting the FormBuilder service
+The FormBuilder service is an injectable provider that is provided with the reactive forms module. Inject this dependency by adding it to the component constructor.
+
+* src/app/profile-editor/profile-editor.component.ts (constructor)
+content_copy
+
+```constructor(private fb: FormBuilder) { }```
+
+## Step 3: Generating form controls
+Utilisez la méthode de groupe pour créer les champs profileForm.
+
+* src/app/profile-editor/profile-editor.component.ts (form builder)
+content_copy
+```
+import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+ 
+@Component({
+  selector: 'app-profile-editor',
+  templateUrl: './profile-editor.component.html',
+  styleUrls: ['./profile-editor.component.css']
+})
+export class ProfileEditorComponent {
+  profileForm = this.fb.group({
+    firstName: [''],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
+    }),
+  });
+ 
+  constructor(private fb: FormBuilder) { }
+}
+
+```
+Compare using the form builder to creating the instances manually.
+
+* src/app/profile-editor/profile-editor.component.ts (instances)
+src/app/profile-editor/profile-editor.component.ts (form builder)
+content_copy
+```
+profileForm = new FormGroup({
+  firstName: new FormControl(''),
+  lastName: new FormControl(''),
+  address: new FormGroup({
+    street: new FormControl(''),
+    city: new FormControl(''),
+    state: new FormControl(''),
+    zip: new FormControl('')
+  })
+});
+```
+
+### 🔎Simple form validation
+
+## Step 1: Importing a validator function
+
+Importer la classe Validators depuis le paquetage @angular/forms.
+
+* src/app/profile-editor/profile-editor.component.ts (import)
+content_copy
+
+```import { Validators } from '@angular/forms';```
+
+## Step 2: Making a field required
+Dans le composant ProfileEditor, ajoutez la méthode statique Validators. required comme deuxième élément du tableau pour le champ firstName.
+* src/app/profile-editor/profile-editor.component.ts (required validator)
+content_copy
+
+``` profileForm = this.fb.group({
+  firstName: ['', Validators.required],
+  lastName: [''],
+  address: this.fb.group({
+    street: [''],
+    city: [''],
+    state: [''],
+    zip: ['']
+  }),
+});
+
+```
+HTML5 possède un ensemble d'attributs intégrés que vous pouvez utiliser pour la validation native, y compris la longueur minimale, minimale et maximale..Vous pouvez profiter de ces attributs facultatifs sur vos éléments de saisie de formulaire. Ajoutez l'attribut requis à l'élément d'entrée firstName.
+
+* src/app/profile-editor/profile-editor.component.html (required attribute)
+content_copy
+
+```<input type="text" formControlName="firstName" required>```
+
+## Attention!
+Utilisez ces attributs de validation HTML5 en combinaison avec les validateurs intégrés fournis par les formulaires réactifs d'Angular. Leur combinaison permet d'éviter les erreurs lorsque l'expression est modifiée après que le modèle a été vérifié.
+
+## Displaying form status
+
+Display the current status of profileForm using interpolation.
+```
+<p>
+  Form Status: {{ profileForm.status }}
+ 
+</p>
+```
