@@ -33,9 +33,9 @@ Chaque composant a un cycle de vie géré par Angular.
 Angular le crée, le restitue, crée et restitue ses enfants, le vérifie lorsque ses propriétés liées aux données changent et le détruit avant de le retirer du DOM.
 
 ````
-ngOnChanges()   on every change
-ngOnInit()       once per component
-ngDoCheck()     if angular suspect a change
+ngOnChanges()  on every change
+ngOnInit()     once per component
+ngDoCheck()    if angular suspect a change
 ngAfterContentInit()
 ngAfterContentChecked()
 ngAfterViewInit()
