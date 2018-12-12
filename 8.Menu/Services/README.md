@@ -25,8 +25,10 @@ export class HeroService {
 Import the service in the component.ts
 Import{ServiceName} from ‘./name.service’;
 
-Add it into the Providers[]
-
+Ajouter le Service dans
+````
+Providers[]
+````
 
 ## Declarer le Service dans le composant.ts
 ````
