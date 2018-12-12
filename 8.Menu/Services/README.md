@@ -28,7 +28,7 @@ Import{ServiceName} from ‘./name.service’;
 Add it into the Providers[]
 
 
-## Declarer le Service dans lw composant.ts
+## Declarer le Service dans le composant.ts
 ````
 constructor(private heroService: HeroService) { }
 ````
@@ -37,5 +37,11 @@ Créer la fonction pour appeler les heros a partir du service
 ````
 getHeroes(): void {
   this.heroes = this.heroService.getHeroes();
+}
+````
+Angular fait appel ngOnInit à un moment approprié après la construction d'une instance HeroesComponent.
+````
+ngOnInit() {
+  this.getHeroes();
 }
 ````
